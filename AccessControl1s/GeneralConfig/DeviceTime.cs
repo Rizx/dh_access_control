@@ -208,7 +208,7 @@ namespace AccessControl1s
                 return;
             }
             dateTimePicker_DevTime.Value = stuInfo.ToDateTime();
-            MessageBox.Show("Get Success(获取成功)");
+            MessageBox.Show("Get Success");
             #endregion
         }
 

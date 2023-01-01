@@ -32,7 +32,7 @@ namespace AccessControl1s
             UIClear();
             if (GetConfig())
             {
-                MessageBox.Show("Get successfully(获取成功)");
+                MessageBox.Show("Get successfully");
                 checkBox_Enable.Checked = cfg.stuABLockInfo.bEnable;
                 comboBox_Door.SelectedIndex = 0;
             }
@@ -249,7 +249,7 @@ namespace AccessControl1s
         {
             if (GetConfig())
             {
-           //     MessageBox.Show("Get successfully(获取成功)");
+           //     MessageBox.Show("Get successfully");
                 checkBox_Enable.Checked = cfg.stuABLockInfo.bEnable;
                 comboBox_Door.SelectedIndex = 0;
             }

@@ -44,7 +44,7 @@ namespace AccessControl1s
 
             if (GetConfig())
             {
-              //  MessageBox.Show("Get successfully(获取成功)");
+              //  MessageBox.Show("Get successfully");
 
                 if (cfg.abFirstEnterEnable == 1 && cfg.stuFirstEnterInfo.bEnable)
                 {
@@ -65,7 +65,7 @@ namespace AccessControl1s
         {
             if (GetConfig())
             {
-                MessageBox.Show("Get successfully(获取成功)");
+                MessageBox.Show("Get successfully");
 
                 if (cfg.abFirstEnterEnable == 1 && cfg.stuFirstEnterInfo.bEnable)
                 {

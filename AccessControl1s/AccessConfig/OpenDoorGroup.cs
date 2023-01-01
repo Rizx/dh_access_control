@@ -45,7 +45,7 @@ namespace AccessControl1s
 
             if (GetConfig())
             {
-           //     MessageBox.Show("Get successfully(获取成功)");
+           //     MessageBox.Show("Get successfully");
 
                 if (cfg_info.nGroup >= 1)
                 {
@@ -77,7 +77,7 @@ namespace AccessControl1s
             UIClear();
             if (GetConfig())
             {
-                MessageBox.Show("Get successfully(获取成功)");
+                MessageBox.Show("Get successfully");
 
                 if (cfg_info.nGroup >= 1)
                 {

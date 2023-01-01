@@ -64,7 +64,7 @@ namespace AccessControl1s
         private void Timer_Tick(object sender, EventArgs e)
         {
             m_Timer.Stop();
-            this.label_result.Text = "Collection failed(采集失败)";
+            this.label_result.Text = "Collection failed";
             if(comboBox_FirPrint.SelectedIndex == 0)
             {
                 FingerPrintInfo = new byte[1];
@@ -107,7 +107,7 @@ namespace AccessControl1s
                             FingerPrintInfo2 = data;
                             m_IsFinger2 = true;
                         }
-                        label_result.Text = "Collection Completed(采集完成)";
+                        label_result.Text = "Collection Completed";
                         button_GetPrint.Enabled = true;
                     }));
 
@@ -127,7 +127,7 @@ namespace AccessControl1s
                             FingerPrintInfo2 = new byte[1];
                             m_IsFinger2 = false;
                         }
-                        label_result.Text = "Collection failed(采集失败)";
+                        label_result.Text = "Collection failed";
                         m_IsCollectionFailed = true;
                         button_GetPrint.Enabled = true;
                     }));
@@ -139,7 +139,7 @@ namespace AccessControl1s
             return true; 
         }
 
-        #region Update UI UI更新
+        #region Update UI 
         private void OnChangeUIState(int nState)
         {
             // load
@@ -177,7 +177,7 @@ namespace AccessControl1s
                         dateTimePicker_CreateTime.Enabled = false;
                         comboBox_FirPrint.Enabled = false;
                         button_GetPrint.Enabled = false;
-                        button_Insert.Text = "Insert(添加)";
+                        button_Insert.Text = "Insert";
                         textBox_CardNo.Text = "";
                         textBox_UserID.Text = "";
                         textBox_CardPwd.Text = "";
@@ -198,7 +198,7 @@ namespace AccessControl1s
                         checkBox_First.Enabled = false;
                         comboBox_FirPrint.Enabled = false;
                         button_GetPrint.Enabled = false;
-                        button_Insert.Text = "Get(获取)";
+                        button_Insert.Text = "Get";
 
                         textBox_RecNo.Text = "";
                         textBox_CardNo.Text = "";
@@ -228,7 +228,7 @@ namespace AccessControl1s
                         button_GetPrint.Enabled = false;
                         button_Insert.Enabled = false;
                         button_GetUpdate.Visible = true;
-                        button_Insert.Text = "Update(更新)";
+                        button_Insert.Text = "Update";
 
                         textBox_RecNo.Text = "";
                         textBox_CardNo.Text = "";
@@ -237,7 +237,7 @@ namespace AccessControl1s
                         textBox_UseTimes.Text = "";
                         comboBox_CardStatus.SelectedIndex = -1;
                         comboBox_CardType.SelectedIndex = -1;
-                        label_CardNo.Text = "Unchangeable(不可改)";
+                        label_CardNo.Text = "Unchangeable";
 
                     }
                     break;
@@ -258,7 +258,7 @@ namespace AccessControl1s
                         comboBox_FirPrint.Enabled = false;
                         button_GetPrint.Enabled = false;
                         button_GetUpdate.Visible = false;
-                        button_Insert.Text = "Remove(移除)";
+                        button_Insert.Text = "Remove";
 
                         textBox_RecNo.Text = "";
                         textBox_CardNo.Text = "";
@@ -287,7 +287,7 @@ namespace AccessControl1s
                         comboBox_FirPrint.Enabled = false;
                         button_GetPrint.Enabled = false;
                         button_GetUpdate.Visible = false;
-                        button_Insert.Text = "Clear(清空)";
+                        button_Insert.Text = "Clear";
                         textBox_RecNo.Text = "";
                         textBox_CardNo.Text = "";
                         textBox_UserID.Text = "";
@@ -300,7 +300,7 @@ namespace AccessControl1s
                         textBox_RecNo.Enabled = false;
                         dateTimePicker_CreateTime.Enabled = false;
                         button_GetUpdate.Visible = false;
-                        button_Insert.Text = "InsertEx(添加)";
+                        button_Insert.Text = "InsertEx";
                         label_result.Text = "";
                         textBox_RecNo.Text = "";
                         textBox_CardNo.Text = "";
@@ -318,7 +318,7 @@ namespace AccessControl1s
                         button_GetUpdate.Visible = true;
                         button_GetUpdate.Enabled = false;
                         button_Insert.Enabled = true;
-                        label_CardNo.Text = "Unchangeable(不可改)";
+                        label_CardNo.Text = "Unchangeable";
                     }
                     break;
                 case 8: // UpdateEx Step2
@@ -329,7 +329,7 @@ namespace AccessControl1s
                         button_GetUpdate.Visible = true;
                         button_GetUpdate.Enabled = false;
                         button_Insert.Enabled = true;
-                        label_CardNo.Text = "Unchangeable(不可改)";
+                        label_CardNo.Text = "Unchangeable";
                     }
                     break;
                 default:
@@ -375,7 +375,7 @@ namespace AccessControl1s
             m_stuInfo.dwSize =  (uint)Marshal.SizeOf(typeof(NET_RECORDSET_ACCESS_CTL_CARD));
             if (0 == nCtlType)
             {
-                #region Insert record 添加卡记录
+                #region Insert record 
                 NET_CTRL_RECORDSET_INSERT_PARAM stuInfo = new NET_CTRL_RECORDSET_INSERT_PARAM();
                 stuInfo.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_INSERT_PARAM));
 
@@ -470,7 +470,7 @@ namespace AccessControl1s
                         return;
                     }
                     stuInfo = (NET_CTRL_RECORDSET_INSERT_PARAM)Marshal.PtrToStructure(ptr, typeof(NET_CTRL_RECORDSET_INSERT_PARAM));
-                    MessageBox.Show("Execute Success(操作成功)\n RecNo=" + stuInfo.stuCtrlRecordSetResult.nRecNo.ToString());
+                    MessageBox.Show("Execute Success\n RecNo=" + stuInfo.stuCtrlRecordSetResult.nRecNo.ToString());
                 }
                 finally
                 {
@@ -482,12 +482,12 @@ namespace AccessControl1s
             }
             else if (1 == nCtlType)
             {
-                #region Get Card Info 获取卡记录 
+                #region Get Card Info 
 
                 int temp;
                 if (!int.TryParse(textBox_RecNo.Text, out temp))
                 {
-                    MessageBox.Show("Num is illegal(记录编号非法)！");
+                    MessageBox.Show("Num is illegal！");
                     return;
                 }
 
@@ -547,7 +547,7 @@ namespace AccessControl1s
                     }
                 
 
-                    MessageBox.Show("Query Success(获取成功)");
+                    MessageBox.Show("Query Success");
                 }
                 catch (Exception ex)
                 {
@@ -561,7 +561,7 @@ namespace AccessControl1s
             }
             else if (2 == nCtlType)
             {
-                #region Update record 更新卡记录 
+                #region Update record 
                 NET_CTRL_RECORDSET_PARAM stuInfo = new NET_CTRL_RECORDSET_PARAM();
                 stuInfo.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_PARAM));
                 stuInfo.emType = EM_NET_RECORD_TYPE.ACCESSCTLCARD;
@@ -650,10 +650,10 @@ namespace AccessControl1s
                         MessageBox.Show(NETClient.GetLastError());
                         return;
                     }
-                //    MessageBox.Show("Execute Success(操作成功)" );
+                //    MessageBox.Show("Execute Success" );
                     stuInfo = (NET_CTRL_RECORDSET_PARAM)Marshal.PtrToStructure(ptr, typeof(NET_CTRL_RECORDSET_PARAM));
                     m_stuInfo = (NET_RECORDSET_ACCESS_CTL_CARD)Marshal.PtrToStructure(stuInfo.pBuf, typeof(NET_RECORDSET_ACCESS_CTL_CARD));
-                    MessageBox.Show("Execute Success(操作成功)\n RecNo=" + m_stuInfo.nRecNo.ToString());
+                    MessageBox.Show("Execute Success\n RecNo=" + m_stuInfo.nRecNo.ToString());
                 }
                 finally
                 {
@@ -665,7 +665,7 @@ namespace AccessControl1s
             }
             else if (3 == nCtlType)
             {
-                #region Remove record 移除卡记录 
+                #region Remove record 
                 NET_CTRL_RECORDSET_PARAM stuInfo = new NET_CTRL_RECORDSET_PARAM();
                 stuInfo.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_PARAM));
                 stuInfo.emType = EM_NET_RECORD_TYPE.ACCESSCTLCARD;
@@ -698,7 +698,7 @@ namespace AccessControl1s
                         MessageBox.Show(NETClient.GetLastError());
                         return;
                     }
-                    MessageBox.Show("Execute Success(操作成功)" );
+                    MessageBox.Show("Execute Success" );
                 }
                 finally
                 {
@@ -710,7 +710,7 @@ namespace AccessControl1s
             }
             else if (4 == nCtlType)
             {
-                #region Clear card record 清除卡记录
+                #region Clear card record
                 NET_CTRL_RECORDSET_PARAM inParam = new NET_CTRL_RECORDSET_PARAM();
                 inParam.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_PARAM));
                 inParam.emType = EM_NET_RECORD_TYPE.ACCESSCTLCARD;
@@ -725,7 +725,7 @@ namespace AccessControl1s
                         MessageBox.Show(NETClient.GetLastError());
                         return;
                     }
-                    MessageBox.Show("Execute Success(操作成功)");
+                    MessageBox.Show("Execute Success");
                 }
                 catch (Exception ex)
                 {
@@ -737,302 +737,16 @@ namespace AccessControl1s
                 }
                 #endregion
             }
-            else if (5 == nCtlType)
-            {
-                #region Insert card record with finger 添加带指纹
-
-                if (FingerPrintInfo == null && FingerPrintInfo2 == null || PacketLen == 0)
-                {
-                    if (m_IsCollection == false)
-                    {
-                        MessageBox.Show("Did not start collecting(没有开始采集)");
-                    }
-                    else if (m_IsCollectionFailed)
-                    {
-                        MessageBox.Show("No fingerprint data,because collection failed(没有指纹数据,因为采集失败)");
-                    }
-                    else if (m_IsListen)
-                    {
-                        MessageBox.Show("In the collection(采集中)");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Unknow Error(未知错误)");
-                    }
-                    return;
-                }
-
-                NET_CTRL_RECORDSET_INSERT_PARAM stuInfo = new NET_CTRL_RECORDSET_INSERT_PARAM();
-                stuInfo.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_INSERT_PARAM));
-
-                stuInfo.stuCtrlRecordSetInfo.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_INSERT_IN));
-                stuInfo.stuCtrlRecordSetInfo.emType = EM_NET_RECORD_TYPE.ACCESSCTLCARD;
-
-                stuInfo.stuCtrlRecordSetInfo.nBufLen = (int)Marshal.SizeOf(typeof(NET_RECORDSET_ACCESS_CTL_CARD));
-
-                stuInfo.stuCtrlRecordSetResult.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_INSERT_OUT));
-
-                m_stuInfo.stuCreateTime.dwYear = (uint)DateTime.Now.Year;
-                m_stuInfo.stuCreateTime.dwMonth = (uint)DateTime.Now.Month;
-                m_stuInfo.stuCreateTime.dwDay = (uint)DateTime.Now.Day;
-                m_stuInfo.stuCreateTime.dwHour = (uint)DateTime.Now.Hour;
-                m_stuInfo.stuCreateTime.dwMinute = (uint)DateTime.Now.Minute;
-                m_stuInfo.stuCreateTime.dwSecond = (uint)DateTime.Now.Second;
-
-                m_stuInfo.szCardNo = this.textBox_CardNo.Text.Trim();
-                m_stuInfo.szUserID = this.textBox_UserID.Text.Trim();
-                m_stuInfo.szPsw = this.textBox_CardPwd.Text.Trim();
-                try
-                {
-                    m_stuInfo.emStatus = (EM_ACCESSCTLCARD_STATE)comboBox_CardStatus.SelectedIndex - 1;
-                    m_stuInfo.emType = (EM_ACCESSCTLCARD_TYPE)comboBox_CardType.SelectedIndex - 1;
-                    m_stuInfo.nUseTime = Convert.ToInt32(textBox_UseTimes.Text.Trim());
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
-
-                m_stuInfo.bNewDoor = true;
-                if (m_selectDoorsList.Count > 0)
-                {
-                    if (m_stuInfo.nNewDoors == null)
-                    {
-                        m_stuInfo.nNewDoors = new int[128];
-                    }
-                    for (int i = 0; i < m_selectDoorsList.Count; i++)
-                    {
-                        m_stuInfo.nNewDoors[i] = m_selectDoorsList[i];
-                    }
-                }
-                m_stuInfo.nNewDoorNum = m_selectDoorsList.Count;
-
-                if (m_selectTimesList.Count > 0)
-                {
-                    if (m_stuInfo.nNewTimeSectionNo == null)
-                    {
-                        m_stuInfo.nNewTimeSectionNo = new int[128];
-                    }
-                    for (int i = 0; i < m_selectTimesList.Count; i++)
-                    {
-                        m_stuInfo.nNewTimeSectionNo[i] = m_selectTimesList[i];
-                    }
-                }
-                m_stuInfo.nNewTimeSectionNum = m_selectTimesList.Count;
-                m_stuInfo.stuValidStartTime.dwYear = (uint)dateTimePicker_ValidStart.Value.Year;
-                m_stuInfo.stuValidStartTime.dwMonth = (uint)dateTimePicker_ValidStart.Value.Month;
-                m_stuInfo.stuValidStartTime.dwDay = (uint)dateTimePicker_ValidStart.Value.Day;
-                m_stuInfo.stuValidStartTime.dwHour = (uint)dateTimePicker_ValidStart.Value.Hour;
-                m_stuInfo.stuValidStartTime.dwMinute = (uint)dateTimePicker_ValidStart.Value.Minute;
-                m_stuInfo.stuValidStartTime.dwSecond = (uint)dateTimePicker_ValidStart.Value.Second;
-
-                m_stuInfo.stuValidEndTime.dwYear = (uint)dateTimePicker_ValidEnd.Value.Year;
-                m_stuInfo.stuValidEndTime.dwMonth = (uint)dateTimePicker_ValidEnd.Value.Month;
-                m_stuInfo.stuValidEndTime.dwDay = (uint)dateTimePicker_ValidEnd.Value.Day;
-                m_stuInfo.stuValidEndTime.dwHour = (uint)dateTimePicker_ValidEnd.Value.Hour;
-                m_stuInfo.stuValidEndTime.dwMinute = (uint)dateTimePicker_ValidEnd.Value.Minute;
-                m_stuInfo.stuValidEndTime.dwSecond = (uint)dateTimePicker_ValidEnd.Value.Second;
-                m_stuInfo.bFirstEnter = this.checkBox_First.Checked;
-
-                m_stuInfo.bEnableExtended = true;
-
-                m_stuInfo.stuFingerPrintInfoEx.nCount = 2;
-                m_stuInfo.stuFingerPrintInfoEx.nLength = PacketLen;
-                m_stuInfo.stuFingerPrintInfoEx.nPacketLen = m_stuInfo.stuFingerPrintInfoEx.nLength * m_stuInfo.stuFingerPrintInfoEx.nCount;
-                m_stuInfo.stuFingerPrintInfoEx.pPacketData =  Marshal.AllocHGlobal(m_stuInfo.stuFingerPrintInfoEx.nPacketLen);
-
-                IntPtr pDst = IntPtr.Zero;
-                if (m_IsFinger1)
-                {
-                    pDst = IntPtr.Add(m_stuInfo.stuFingerPrintInfoEx.pPacketData, 0);
-                    Marshal.Copy(FingerPrintInfo, 0, pDst, m_stuInfo.stuFingerPrintInfoEx.nLength);
-                }
-                if (m_IsFinger2)
-                {
-                    pDst = IntPtr.Add(m_stuInfo.stuFingerPrintInfoEx.pPacketData, m_stuInfo.stuFingerPrintInfoEx.nLength);
-                    Marshal.Copy(FingerPrintInfo2, 0, pDst, m_stuInfo.stuFingerPrintInfoEx.nLength);
-                }
-
-                IntPtr inPtr = IntPtr.Zero;
-                IntPtr ptr = IntPtr.Zero;
-                try
-                {
-                    inPtr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(NET_RECORDSET_ACCESS_CTL_CARD)));
-                    Marshal.StructureToPtr(m_stuInfo, inPtr, true);
-
-                    stuInfo.stuCtrlRecordSetInfo.pBuf = inPtr;
-                    stuInfo.stuCtrlRecordSetInfo.nBufLen = (int)Marshal.SizeOf(typeof(NET_RECORDSET_ACCESS_CTL_CARD));
-                    ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_INSERT_PARAM)));
-                    Marshal.StructureToPtr(stuInfo, ptr, true);
-                    bool ret = NETClient.ControlDevice(loginID, EM_CtrlType.RECORDSET_INSERTEX, ptr, 10000);
-                    if (!ret)
-                    {
-                        MessageBox.Show(NETClient.GetLastError());
-                        return;
-                    }
-                    stuInfo = (NET_CTRL_RECORDSET_INSERT_PARAM)Marshal.PtrToStructure(ptr, typeof(NET_CTRL_RECORDSET_INSERT_PARAM));
-                    MessageBox.Show("Execute Success(操作成功)\n RecNo=" + stuInfo.stuCtrlRecordSetResult.nRecNo.ToString());
-                    PacketLen = 0;
-                    m_IsFinger1 = false;
-                    m_IsFinger2 = false;
-                    m_IsCollection = false;
-
-                }
-                finally
-                {
-                    Marshal.FreeHGlobal(m_stuInfo.stuFingerPrintInfoEx.pPacketData);
-                    m_stuInfo.stuFingerPrintInfoEx.pPacketData = IntPtr.Zero;
-                    Marshal.FreeHGlobal(inPtr);
-                    Marshal.FreeHGlobal(ptr);
-                }
-                #endregion
-
-            }
-            else if (6 == nCtlType)
-            {
-                #region Update record with finger 更新带指纹
-                NET_CTRL_RECORDSET_PARAM stuInfo = new NET_CTRL_RECORDSET_PARAM();
-                stuInfo.dwSize = (uint)Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_PARAM));
-                stuInfo.emType = EM_NET_RECORD_TYPE.ACCESSCTLCARD;
-
-                m_stuInfo.stuCreateTime.dwYear = (uint)DateTime.Now.Year;
-                m_stuInfo.stuCreateTime.dwMonth = (uint)DateTime.Now.Month;
-                m_stuInfo.stuCreateTime.dwDay = (uint)DateTime.Now.Day;
-                m_stuInfo.stuCreateTime.dwHour = (uint)DateTime.Now.Hour;
-                m_stuInfo.stuCreateTime.dwMinute = (uint)DateTime.Now.Minute;
-                m_stuInfo.stuCreateTime.dwSecond = (uint)DateTime.Now.Second;
-
-                m_stuInfo.szCardNo = this.textBox_CardNo.Text.Trim();
-                m_stuInfo.szUserID = this.textBox_UserID.Text.Trim();
-
-                m_stuInfo.szPsw = this.textBox_CardPwd.Text.Trim();
-
-                try
-                {
-                    m_stuInfo.nRecNo = Convert.ToInt32(textBox_RecNo.Text.Trim());
-                    m_stuInfo.emStatus = (EM_ACCESSCTLCARD_STATE)comboBox_CardStatus.SelectedIndex - 1;
-                    m_stuInfo.emType = (EM_ACCESSCTLCARD_TYPE)comboBox_CardType.SelectedIndex - 1;
-                    m_stuInfo.nUseTime = Convert.ToInt32(textBox_UseTimes.Text.Trim());
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
-                m_stuInfo.bNewDoor = true;
-                if (m_selectDoorsList.Count > 0)
-                {
-                    if (m_stuInfo.nNewDoors == null)
-                    {
-                        m_stuInfo.nNewDoors = new int[128];
-                    }
-                    for (int i = 0; i < m_selectDoorsList.Count; i++)
-                    {
-                        m_stuInfo.nNewDoors[i] = m_selectDoorsList[i];
-                    }
-                }
-                m_stuInfo.nNewDoorNum = m_selectDoorsList.Count;
-
-                if (m_selectTimesList.Count > 0)
-                {
-                    if (m_stuInfo.nNewTimeSectionNo == null)
-                    {
-                        m_stuInfo.nNewTimeSectionNo = new int[128];
-                    }
-                    for (int i = 0; i < m_selectTimesList.Count; i++)
-                    {
-                        m_stuInfo.nNewTimeSectionNo[i] = m_selectTimesList[i];
-                    }
-                }
-                m_stuInfo.nNewTimeSectionNum = m_selectTimesList.Count;
-                m_stuInfo.stuValidStartTime.dwYear = (uint)dateTimePicker_ValidStart.Value.Year;
-                m_stuInfo.stuValidStartTime.dwMonth = (uint)dateTimePicker_ValidStart.Value.Month;
-                m_stuInfo.stuValidStartTime.dwDay = (uint)dateTimePicker_ValidStart.Value.Day;
-                m_stuInfo.stuValidStartTime.dwHour = (uint)dateTimePicker_ValidStart.Value.Hour;
-                m_stuInfo.stuValidStartTime.dwMinute = (uint)dateTimePicker_ValidStart.Value.Minute;
-                m_stuInfo.stuValidStartTime.dwSecond = (uint)dateTimePicker_ValidStart.Value.Second;
-
-                m_stuInfo.stuValidEndTime.dwYear = (uint)dateTimePicker_ValidEnd.Value.Year;
-                m_stuInfo.stuValidEndTime.dwMonth = (uint)dateTimePicker_ValidEnd.Value.Month;
-                m_stuInfo.stuValidEndTime.dwDay = (uint)dateTimePicker_ValidEnd.Value.Day;
-                m_stuInfo.stuValidEndTime.dwHour = (uint)dateTimePicker_ValidEnd.Value.Hour;
-                m_stuInfo.stuValidEndTime.dwMinute = (uint)dateTimePicker_ValidEnd.Value.Minute;
-                m_stuInfo.stuValidEndTime.dwSecond = (uint)dateTimePicker_ValidEnd.Value.Second;
-                m_stuInfo.bFirstEnter = this.checkBox_First.Checked;
-
-                m_stuInfo.bEnableExtended = true;
-                m_stuInfo.stuFingerPrintInfoEx.nCount = 2;
-
-
-                IntPtr pDst = IntPtr.Zero;
-                if (m_IsFinger1)
-                {
-                    m_stuInfo.stuFingerPrintInfoEx.nLength = PacketLen;
-                    m_stuInfo.stuFingerPrintInfoEx.nPacketLen = m_stuInfo.stuFingerPrintInfoEx.nLength * m_stuInfo.stuFingerPrintInfoEx.nCount;
-                    if (m_stuInfo.stuFingerPrintInfoEx.pPacketData == IntPtr.Zero)
-                    {
-                         m_stuInfo.stuFingerPrintInfoEx.pPacketData = Marshal.AllocHGlobal(m_stuInfo.stuFingerPrintInfoEx.nPacketLen);
-                    }
-                    pDst = IntPtr.Add(m_stuInfo.stuFingerPrintInfoEx.pPacketData, 0);
-                    Marshal.Copy(FingerPrintInfo, 0, pDst, m_stuInfo.stuFingerPrintInfoEx.nLength);
-                }
-                if (m_IsFinger2)
-                {
-                    m_stuInfo.stuFingerPrintInfoEx.nLength = PacketLen;
-                    m_stuInfo.stuFingerPrintInfoEx.nPacketLen = m_stuInfo.stuFingerPrintInfoEx.nLength * m_stuInfo.stuFingerPrintInfoEx.nCount;
-                    if (m_stuInfo.stuFingerPrintInfoEx.pPacketData == IntPtr.Zero)
-                    {
-                        m_stuInfo.stuFingerPrintInfoEx.pPacketData = Marshal.AllocHGlobal(m_stuInfo.stuFingerPrintInfoEx.nPacketLen);
-                    }
-                    pDst = IntPtr.Add(m_stuInfo.stuFingerPrintInfoEx.pPacketData, m_stuInfo.stuFingerPrintInfoEx.nLength);
-                    Marshal.Copy(FingerPrintInfo2, 0, pDst, m_stuInfo.stuFingerPrintInfoEx.nLength);
-                }
-
-                IntPtr inPtr = IntPtr.Zero;
-                IntPtr ptr = IntPtr.Zero;
-                try
-                {
-                    inPtr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(NET_RECORDSET_ACCESS_CTL_CARD)));
-                    Marshal.StructureToPtr(m_stuInfo, inPtr, true);
-
-                    stuInfo.pBuf = inPtr;
-                    stuInfo.nBufLen = (int)Marshal.SizeOf(typeof(NET_RECORDSET_ACCESS_CTL_CARD));
-
-                    ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(NET_CTRL_RECORDSET_PARAM)));
-                    Marshal.StructureToPtr(stuInfo, ptr, true);
-                    bool ret = NETClient.ControlDevice(loginID, EM_CtrlType.RECORDSET_UPDATEEX, ptr, 10000);
-                    if (!ret)
-                    {
-                        MessageBox.Show(NETClient.GetLastError());
-                        return;
-                    }
-                    stuInfo = (NET_CTRL_RECORDSET_PARAM)Marshal.PtrToStructure(ptr, typeof(NET_CTRL_RECORDSET_PARAM));
-                    m_stuInfo = (NET_RECORDSET_ACCESS_CTL_CARD)Marshal.PtrToStructure(stuInfo.pBuf, typeof(NET_RECORDSET_ACCESS_CTL_CARD));
-                    MessageBox.Show("Execute Success(操作成功)\n RecNo=" + m_stuInfo.nRecNo.ToString());
-                }
-                finally
-                {
-                    Marshal.FreeHGlobal(m_stuInfo.stuFingerPrintInfoEx.pPacketData);
-                    m_stuInfo.stuFingerPrintInfoEx.pPacketData = IntPtr.Zero;
-                    Marshal.FreeHGlobal(inPtr);
-                    Marshal.FreeHGlobal(ptr);
-                }
-                OnChangeUIState(nCtlType);
-                #endregion
-
-            }
-
         }
 
         private void button_GetUpdate_Click(object sender, EventArgs e)
         {
-            #region Get Card Info 获取卡记录
+            #region Get Card Info
 
             int temp;
             if (!int.TryParse(textBox_RecNo.Text, out temp))
             {
-                MessageBox.Show("Num is illegal(记录编号非法)！");
+                MessageBox.Show("Num is illegal！");
                 return;
             }
 
@@ -1104,7 +818,7 @@ namespace AccessControl1s
                     OnChangeUIState(8);
                 }
 
-              //  MessageBox.Show("Query Success(获取成功)");
+              //  MessageBox.Show("Query Success");
             }
             finally
             {
@@ -1115,7 +829,7 @@ namespace AccessControl1s
 
         private void button_GetPrint_Click(object sender, EventArgs e)
         {
-            #region collect friger print 采集指纹
+            #region collect friger print
             m_IsListen = NETClient.StartListen(loginID);
             if (m_IsListen == false)
             {
@@ -1147,12 +861,12 @@ namespace AccessControl1s
                 bool ret = NETClient.ControlDevice(loginID, EM_CtrlType.CAPTURE_FINGER_PRINT, inPtr, 60000);
                 if (!ret)
                 {
-                    MessageBox.Show("Start collection failed(开始采集失败)");
+                    MessageBox.Show("Start collection failed");
                     return;
                 }
                 
                 m_Timer.Start();
-                this.label_result.Text = "Start Collection(开始采集)";
+                this.label_result.Text = "Start Collection";
                 this.button_GetPrint.Enabled = false;
             }
             catch (Exception ex)
@@ -1225,8 +939,4 @@ namespace AccessControl1s
         }
         */
     }
-
-
-
-
 }

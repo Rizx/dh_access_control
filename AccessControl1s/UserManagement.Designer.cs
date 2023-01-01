@@ -84,18 +84,18 @@
             this.comboBox_OperateType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OperateType.FormattingEnabled = true;
             this.comboBox_OperateType.Items.AddRange(new object[] {
-            "Insert(添加)",
-            "Get(获取)",
-            "Update(更新)",
-            "Remove(移除)",
-            "Clear(清空)",
+            "Insert",
+            "Get",
+            "Update",
+            "Remove",
+            "Clear",
             "InsertEX(添加带指纹)",
             "UpdateEX(更新带指纹)"});
             this.comboBox_OperateType.Location = new System.Drawing.Point(110, 31);
             this.comboBox_OperateType.Name = "comboBox_OperateType";
             this.comboBox_OperateType.Size = new System.Drawing.Size(190, 20);
             this.comboBox_OperateType.TabIndex = 0;
-            this.comboBox_OperateType.Text = "Insert(添加)";
+            this.comboBox_OperateType.Text = "Insert";
             this.comboBox_OperateType.SelectedIndexChanged += new System.EventHandler(this.comboBox_OperateType_SelectedIndexChanged);
             // 
             // groupBox2
@@ -165,7 +165,7 @@
             this.button_GetUpdate.Name = "button_GetUpdate";
             this.button_GetUpdate.Size = new System.Drawing.Size(105, 30);
             this.button_GetUpdate.TabIndex = 30;
-            this.button_GetUpdate.Text = "Get(获取)";
+            this.button_GetUpdate.Text = "Get";
             this.button_GetUpdate.UseVisualStyleBackColor = true;
             this.button_GetUpdate.Click += new System.EventHandler(this.button_GetUpdate_Click);
             // 
@@ -175,7 +175,7 @@
             this.button_Insert.Name = "button_Insert";
             this.button_Insert.Size = new System.Drawing.Size(105, 30);
             this.button_Insert.TabIndex = 29;
-            this.button_Insert.Text = "Insert(添加)";
+            this.button_Insert.Text = "Insert";
             this.button_Insert.UseVisualStyleBackColor = true;
             this.button_Insert.Click += new System.EventHandler(this.button_Insert_Click);
             // 
@@ -185,7 +185,7 @@
             this.button_GetPrint.Name = "button_GetPrint";
             this.button_GetPrint.Size = new System.Drawing.Size(75, 23);
             this.button_GetPrint.TabIndex = 28;
-            this.button_GetPrint.Text = "Get(获取)";
+            this.button_GetPrint.Text = "Get";
             this.button_GetPrint.UseVisualStyleBackColor = true;
             this.button_GetPrint.Click += new System.EventHandler(this.button_GetPrint_Click);
             // 

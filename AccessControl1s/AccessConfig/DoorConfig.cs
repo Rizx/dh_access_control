@@ -133,7 +133,7 @@ namespace AccessControl1s
                 comboBox_Week.SelectedIndex = -1;
                 if (GetConfig())
                 {
-                    MessageBox.Show("Get successfully(获取成功)!");
+                    MessageBox.Show("Get successfully!");
                     if ((int)cfg.emDoorOpenMethod > 13)
                     {
                         cmbBox_OpenMethod.SelectedIndex = -1;

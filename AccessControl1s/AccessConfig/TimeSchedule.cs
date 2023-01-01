@@ -94,7 +94,7 @@ namespace AccessControl1s
             textBox_Name.Text = timeSchedule.szName;
             comboBox_Week.SelectedIndex = 0;
 
-            MessageBox.Show("Get success(获取成功)");
+            MessageBox.Show("Get success");
 
         }
 
@@ -272,7 +272,7 @@ namespace AccessControl1s
         }
 
 
-        #region Update UI UI更新
+        #region Update UI 
         private void OnChangeUIState(int nState)
         {
             // load
@@ -293,7 +293,7 @@ namespace AccessControl1s
                         textBox_RecNo.Enabled = false;
                         textBox_RecNo.Text = "";
                         checkBox_HolidayEnable.Checked = false;
-                        button_Operate.Text = "Insert(添加)";
+                        button_Operate.Text = "Insert";
                     }
                     break;
                 case 1: // Get
@@ -304,7 +304,7 @@ namespace AccessControl1s
                         textBox_HolidayNo.Text = "";
                         textBox_RecNo.Text = "";
                         checkBox_HolidayEnable.Checked = false;
-                        button_Operate.Text = "Get(获取)";
+                        button_Operate.Text = "Get";
                     }
                     break;
                 case 2: // Update step1
@@ -315,7 +315,7 @@ namespace AccessControl1s
                         textBox_HolidayNo.Text = "";
                         textBox_RecNo.Text = "";
                         checkBox_HolidayEnable.Checked = false;
-                        button_Operate.Text = "Update(更新)";
+                        button_Operate.Text = "Update";
                         button_Operate.Enabled = false;
                         button_GetHoliday.Visible = true;
                         button_GetHoliday.Enabled = true;
@@ -329,7 +329,7 @@ namespace AccessControl1s
                         textBox_HolidayNo.Text = "";
                         textBox_RecNo.Text = "";
                         checkBox_HolidayEnable.Checked = false;
-                        button_Operate.Text = "Remove(移除)";
+                        button_Operate.Text = "Remove";
                     }
                     break;
                 case 4: // Clear
@@ -376,7 +376,7 @@ namespace AccessControl1s
             int temp;
             if (!int.TryParse(textBox_RecNo.Text, out temp))
             {
-                MessageBox.Show("Num is illegal(记录编号非法)！");
+                MessageBox.Show("Num is illegal！");
                 return;
             }
             IntPtr pBuf = IntPtr.Zero;
@@ -415,7 +415,7 @@ namespace AccessControl1s
                     {
                         m_selectDoorsList.Add(update_holiday.sznDoors[i]);
                     }
-                    MessageBox.Show("Get succeed(获取成功)。");
+                    MessageBox.Show("Get succeed。");
                     OnChangeUIState(5);
                 }
                 else
@@ -536,7 +536,7 @@ namespace AccessControl1s
             int temp;
             if (!int.TryParse(textBox_RecNo.Text, out temp))
             {
-                MessageBox.Show("Num is illegal(记录编号非法)！");
+                MessageBox.Show("Num is illegal！");
                 return;
             }
             IntPtr pBuf = IntPtr.Zero;
@@ -568,7 +568,7 @@ namespace AccessControl1s
                     dateTimePicker_EndTime.Value = update_holiday.stuEndTime.ToDateTime();
                     textBox_HolidayNo.Text = update_holiday.szHolidayNo;
                     checkBox_HolidayEnable.Checked = update_holiday.bEnable;
-                    MessageBox.Show("Get succeed(获取成功)。");
+                    MessageBox.Show("Get succeed。");
                 }
                 else
                 {
@@ -656,7 +656,7 @@ namespace AccessControl1s
             int temp;
             if (!int.TryParse(textBox_RecNo.Text, out temp))
             {
-                MessageBox.Show("Num is illegal(记录编号非法)！");
+                MessageBox.Show("Num is illegal！");
                 return;
             }
 

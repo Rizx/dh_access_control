@@ -57,7 +57,7 @@ namespace AccessControl1s
                     {
                         textBox_RecNo.Enabled = false;
                       
-                        button_Operate.Text = "Insert(添加)";
+                        button_Operate.Text = "Insert";
                     }
                     break;
                 case 1:
@@ -66,7 +66,7 @@ namespace AccessControl1s
                         textBox_UserID.Enabled = false;
                         textBox_OpenPwd.Enabled = false;
                         //button_Doors.Enabled = false;
-                        button_Operate.Text = "Get(获取)";
+                        button_Operate.Text = "Get";
                     }
                     break;
                 case 2:
@@ -75,7 +75,7 @@ namespace AccessControl1s
                         textBox_UserID.Enabled = false;
                         textBox_OpenPwd.Enabled = false;
                         button_Doors.Enabled = false; 
-                        button_Operate.Text = "Update(更新)";
+                        button_Operate.Text = "Update";
                         button_Operate.Enabled = false;
                         button_Get.Visible = true;
                         button_Get.Enabled = true;
@@ -89,7 +89,7 @@ namespace AccessControl1s
                         button_Doors.Enabled = false;
                         button_Get.Visible = false;
                         button_Operate.Enabled = true;
-                        button_Operate.Text = "Remove(移除)";
+                        button_Operate.Text = "Remove";
                     }
                     break;
                 case 4:
@@ -100,7 +100,7 @@ namespace AccessControl1s
                         button_Doors.Enabled = false;
                         button_Get.Visible = false;
                         button_Operate.Enabled = true;
-                        button_Operate.Text = "Clear(清空)";
+                        button_Operate.Text = "Clear";
                     }
                     break;
                 default:
@@ -206,7 +206,7 @@ namespace AccessControl1s
             int temp;
             if (!int.TryParse(textBox_RecNo.Text, out temp))
             {
-                MessageBox.Show("Num is illegal(记录编号非法)！");
+                MessageBox.Show("Num is illegal！");
                 return;
             }
             IntPtr pBuf = IntPtr.Zero;
@@ -243,7 +243,7 @@ namespace AccessControl1s
                     {
                         m_selectDoorsList.Add(update_pwd.sznDoors[i]);
                     }
-                    MessageBox.Show("Get succeed(获取成功)。");
+                    MessageBox.Show("Get succeed。");
 
                     textBox_RecNo.Enabled = false;
                     textBox_UserID.Enabled = true;
@@ -322,7 +322,7 @@ namespace AccessControl1s
                     textBox_UserID.Enabled = false;
                     textBox_OpenPwd.Enabled = false;
                     button_Doors.Enabled = false;
-                    // button_Operate.Text = "Update(更新)";
+                    // button_Operate.Text = "Update";
                     button_Operate.Enabled = false;
                     button_Get.Enabled = true;
                     ClearData();
@@ -348,7 +348,7 @@ namespace AccessControl1s
             int temp;
             if (!int.TryParse(textBox_RecNo.Text, out temp))
             {
-                MessageBox.Show("Num is illegal(记录编号非法)！");
+                MessageBox.Show("Num is illegal！");
                 return;
             }
 
