@@ -77,7 +77,7 @@
             this.groupBox1.Size = new System.Drawing.Size(542, 69);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Operation Type(操作类型)";
+            this.groupBox1.Text = "Operation Type";
             // 
             // comboBox_OperateType
             // 
@@ -89,8 +89,8 @@
             "Update",
             "Remove",
             "Clear",
-            "InsertEX(添加带指纹)",
-            "UpdateEX(更新带指纹)"});
+            "InsertEX",
+            "UpdateEX"});
             this.comboBox_OperateType.Location = new System.Drawing.Point(110, 31);
             this.comboBox_OperateType.Name = "comboBox_OperateType";
             this.comboBox_OperateType.Size = new System.Drawing.Size(190, 20);
@@ -139,7 +139,7 @@
             this.groupBox2.Size = new System.Drawing.Size(542, 541);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Info(信息)";
+            this.groupBox2.Text = "Info";
             // 
             // label_result
             // 
@@ -157,7 +157,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(95, 12);
             this.label15.TabIndex = 31;
-            this.label15.Text = "Hex(16进制数字)";
+            this.label15.Text = "Hex";
             // 
             // button_GetUpdate
             // 
@@ -208,7 +208,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(119, 12);
             this.label14.TabIndex = 26;
-            this.label14.Text = "FingerPrint(指纹)：";
+            this.label14.Text = "FingerPrint：";
             // 
             // checkBox_First
             // 
@@ -226,7 +226,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(137, 12);
             this.label13.TabIndex = 24;
-            this.label13.Text = "FirstEnter(是否首卡)：";
+            this.label13.Text = "FirstEnter：";
             // 
             // dateTimePicker_ValidEnd
             // 
@@ -244,7 +244,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(161, 12);
             this.label12.TabIndex = 22;
-            this.label12.Text = "ValidDateEnd(有效结束日期)";
+            this.label12.Text = "ValidDateEnd";
             // 
             // dateTimePicker_ValidStart
             // 
@@ -262,7 +262,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(173, 12);
             this.label11.TabIndex = 20;
-            this.label11.Text = "ValidDateStart(有效开始日期)";
+            this.label11.Text = "ValidDateStart";
             // 
             // textBox_UseTimes
             // 
@@ -278,7 +278,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 12);
             this.label10.TabIndex = 18;
-            this.label10.Text = "UseTime(可用次数)：";
+            this.label10.Text = "UseTime：";
             // 
             // button_TimeSec
             // 
@@ -298,7 +298,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 12);
             this.label9.TabIndex = 16;
-            this.label9.Text = "TimeSection(时间段)：";
+            this.label9.Text = "TimeSection：";
             // 
             // label8
             // 
@@ -343,13 +343,13 @@
             this.comboBox_CardType.FormattingEnabled = true;
             this.comboBox_CardType.Items.AddRange(new object[] {
             "Unknown",
-            "General(一般卡)",
-            "VIP(VIP卡)",
-            "Guest(来宾卡)",
-            "Patrol(巡逻卡)",
-            "BlackList(黑名单卡)",
-            "Duress(胁迫卡)",
-            "MotherCard(母卡)"});
+            "General",
+            "VIP",
+            "Guest",
+            "Patrol",
+            "BlackList",
+            "Duress",
+            "MotherCard"});
             this.comboBox_CardType.Location = new System.Drawing.Point(200, 178);
             this.comboBox_CardType.Name = "comboBox_CardType";
             this.comboBox_CardType.Size = new System.Drawing.Size(121, 20);
@@ -361,10 +361,10 @@
             this.comboBox_CardStatus.FormattingEnabled = true;
             this.comboBox_CardStatus.Items.AddRange(new object[] {
             "Unknown",
-            "Normal(普通)",
-            "Lose(丢失)",
-            "LogOff(注销)",
-            "Freeze(冻结)"});
+            "Normal",
+            "Lose",
+            "LogOff",
+            "Freeze"});
             this.comboBox_CardStatus.Location = new System.Drawing.Point(200, 150);
             this.comboBox_CardStatus.Name = "comboBox_CardStatus";
             this.comboBox_CardStatus.Size = new System.Drawing.Size(121, 20);
@@ -407,7 +407,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 12);
             this.label6.TabIndex = 5;
-            this.label6.Text = "CardType(卡类型)：";
+            this.label6.Text = "CardType：";
             // 
             // label5
             // 
@@ -416,7 +416,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 12);
             this.label5.TabIndex = 4;
-            this.label5.Text = "CardStatus(卡状态)：";
+            this.label5.Text = "CardStatus：";
             // 
             // label4
             // 
@@ -425,7 +425,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 12);
             this.label4.TabIndex = 3;
-            this.label4.Text = "UserID(用户编号)：";
+            this.label4.Text = "UserID：";
             // 
             // label3
             // 
@@ -443,7 +443,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "CreateTime(创建时间)：";
+            this.label2.Text = "CreateTime：";
             // 
             // label1
             // 
@@ -452,7 +452,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "RecNo(记录集序号)：";
+            this.label1.Text = "RecNo：";
             // 
             // label_CardNo
             // 
@@ -474,7 +474,7 @@
             this.MinimizeBox = false;
             this.Name = "UserManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "UserManagement(用户管理)";
+            this.Text = "UserManagement";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
