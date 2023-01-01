@@ -51,7 +51,7 @@ namespace AccessControl1s
                     return;
                 }
 
-                btn_StartQuery.Text = "StopQuery(停止查询)";
+                btn_StartQuery.Text = "StopQuery";
                 
                 btn_NextLog.Enabled = true;
                 btn_GetLogCount.Enabled = true;
@@ -60,7 +60,7 @@ namespace AccessControl1s
             {
                 NETClient.StopQueryLog(m_FindLogID);
                 m_FindLogID = IntPtr.Zero;
-                btn_StartQuery.Text = "StartQuery(开始查询)";
+                btn_StartQuery.Text = "StartQuery";
                 btn_NextLog.Enabled = false;
                 btn_GetLogCount.Enabled = false;
                 textBox_LogCount.Text = "";

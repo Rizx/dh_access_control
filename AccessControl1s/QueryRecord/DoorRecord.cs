@@ -46,7 +46,7 @@ namespace AccessControl1s
                     MessageBox.Show(NETClient.GetLastError());
                     return;
                 }
-                btn_StartQuery.Text = "StopQuery(停止查询)";
+                btn_StartQuery.Text = "StopQuery";
                 btn_NextFind.Enabled = true;
                 btn_GetRecordCount.Enabled = true;
                 dateTimePicker_Start.Enabled = false;
@@ -56,7 +56,7 @@ namespace AccessControl1s
             {
                 NETClient.FindRecordClose(m_FindDoorRecordID);
                 m_FindDoorRecordID = IntPtr.Zero;
-                btn_StartQuery.Text = "StartQuery(开始查询)";
+                btn_StartQuery.Text = "StartQuery";
                 btn_NextFind.Enabled = false;
                 btn_GetRecordCount.Enabled = false;
                 dateTimePicker_Start.Enabled = true;

@@ -116,7 +116,7 @@
             this.btn_StartQuery.Name = "btn_StartQuery";
             this.btn_StartQuery.Size = new System.Drawing.Size(151, 28);
             this.btn_StartQuery.TabIndex = 41;
-            this.btn_StartQuery.Text = "StartQuery(开始查询)";
+            this.btn_StartQuery.Text = "StartQuery";
             this.btn_StartQuery.UseVisualStyleBackColor = true;
             this.btn_StartQuery.Click += new System.EventHandler(this.btn_StartQuery_Click);
             // 
