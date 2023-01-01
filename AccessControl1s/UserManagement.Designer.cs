@@ -307,7 +307,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 12);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Doors(门)：";
+            this.label8.Text = "Doors：";
             // 
             // button_Door
             // 
@@ -327,7 +327,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 12);
             this.label7.TabIndex = 13;
-            this.label7.Text = "CardPassword(密码)：";
+            this.label7.Text = "CardPassword：";
             // 
             // textBox_CardPwd
             // 
@@ -434,7 +434,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "CardNo(卡号)：";
+            this.label3.Text = "CardNo：";
             // 
             // label2
             // 

@@ -59,22 +59,22 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "No.(编号)";
+            this.columnHeader1.Text = "No.";
             this.columnHeader1.Width = 84;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Time(时间)";
+            this.columnHeader2.Text = "Time";
             this.columnHeader2.Width = 127;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "UserName(用户名)";
+            this.columnHeader3.Text = "UserName";
             this.columnHeader3.Width = 115;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Type(类型)";
+            this.columnHeader4.Text = "Type";
             this.columnHeader4.Width = 99;
             // 
             // columnHeader5
