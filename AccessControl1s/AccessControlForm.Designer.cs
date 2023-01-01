@@ -116,7 +116,7 @@
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(90, 23);
             this.btn_Login.TabIndex = 12;
-            this.btn_Login.Text = "Login(登录)";
+            this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
@@ -577,7 +577,7 @@
             this.btn_StartListen.Name = "btn_StartListen";
             this.btn_StartListen.Size = new System.Drawing.Size(169, 23);
             this.btn_StartListen.TabIndex = 0;
-            this.btn_StartListen.Text = "StartListen(开启订阅)";
+            this.btn_StartListen.Text = "StartListen";
             this.btn_StartListen.UseVisualStyleBackColor = true;
             this.btn_StartListen.Click += new System.EventHandler(this.btn_StartListen_Click);
             // 

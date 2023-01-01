@@ -58,16 +58,13 @@ namespace AccessControl1s
 
             try
             {
-                //初始化
                 NETClient.Init(m_DisConnectCallBack, IntPtr.Zero, null);
                 InitOrLogoutUI();
-                //打开日志
                 NET_LOG_SET_PRINT_INFO logInfo = new NET_LOG_SET_PRINT_INFO()
                 {
                     dwSize = (uint)Marshal.SizeOf(typeof(NET_LOG_SET_PRINT_INFO))
                 };
-               // NETClient.LogOpen(logInfo);
-                //设置断线重连回调
+                // NETClient.LogOpen(logInfo);
                 NETClient.SetAutoReconnect(m_ReConnectCallBack, IntPtr.Zero);
             }
             catch (Exception ex)
@@ -81,14 +78,14 @@ namespace AccessControl1s
 
         private void UpdateDisConnectUI()
         {
-            this.Text = titleName + " -- Offline(离线)";
+            this.Text = titleName + " -- Offline";
             m_bOnline = false;
             InitOrCloseOtherUI();
         }
 
         private void UpdateReConnectUI()
         {
-            this.Text = titleName + " -- Online(在线)";
+            this.Text = titleName + " -- Online";
             m_bOnline = true;
             OpenOtherUI();
         }
@@ -97,19 +94,19 @@ namespace AccessControl1s
         private void InitOrLogoutUI()
         {
             this.Text = titleName;
-            btn_Login.Text = "Login(登录)";
+            btn_Login.Text = "Login";
             InitOrCloseOtherUI();
         }
 
         private void LoginUI()
         {
-            this.Text = titleName + " -- Online(在线)";
-            btn_Login.Text = "Logout(登出)";
+            this.Text = titleName + " -- Online";
+            btn_Login.Text = "Logout";
 
             m_bOnline = true;
 
 
-            #region Query Access control caps 获取门禁能力
+            #region Query Access control caps
 
             int nCount = 0;
             CFG_CAP_ACCESSCONTROL info = new CFG_CAP_ACCESSCONTROL();
@@ -140,7 +137,6 @@ namespace AccessControl1s
 
         private void InitOrCloseOtherUI()
         {
-           //其他控件操作初始化
             Channel_comboBox.Items.Clear();
             Channel_comboBox.Enabled = false;
             btn_OpenDoor.Enabled = false;
@@ -171,7 +167,6 @@ namespace AccessControl1s
 
         private void OpenOtherUI()
         {
-            //其他控件操作使能
             Channel_comboBox.Items.Clear();
             if (nChm > 0)
             {
@@ -310,18 +305,18 @@ namespace AccessControl1s
                     NET_ALARM_ACCESS_CTL_NOT_CLOSE_INFO notclose_info = (NET_ALARM_ACCESS_CTL_NOT_CLOSE_INFO)Marshal.PtrToStructure(pBuf, typeof(NET_ALARM_ACCESS_CTL_NOT_CLOSE_INFO));
                     item.Text = Alarm_Index.ToString();
                     item.SubItems.Add(notclose_info.stuTime.ToString());
-                    item.SubItems.Add("NotClose(门未关)");
+                    item.SubItems.Add("NotClose");
                     item.SubItems.Add("");
                     item.SubItems.Add("");
                     item.SubItems.Add(notclose_info.nDoor.ToString());
                     item.SubItems.Add("");
                     if (notclose_info.nAction == ALARM_START)
                     {
-                        item.SubItems.Add("Start(开始)");
+                        item.SubItems.Add("Start");
                     }
                     else if (notclose_info.nAction == ALARM_STOP)
                     {
-                        item.SubItems.Add("Stop(结束)");
+                        item.SubItems.Add("Stop");
                     }
                     else
                     {
@@ -344,7 +339,7 @@ namespace AccessControl1s
                     NET_ALARM_ACCESS_CTL_BREAK_IN_INFO breakin_info = (NET_ALARM_ACCESS_CTL_BREAK_IN_INFO)Marshal.PtrToStructure(pBuf, typeof(NET_ALARM_ACCESS_CTL_BREAK_IN_INFO));
                     item.Text = Alarm_Index.ToString();
                     item.SubItems.Add(breakin_info.stuTime.ToString());
-                    item.SubItems.Add("BreakIn(闯入)");
+                    item.SubItems.Add("BreakIn");
                     item.SubItems.Add("");
                     item.SubItems.Add("");
                     item.SubItems.Add(breakin_info.nDoor.ToString());
@@ -367,7 +362,7 @@ namespace AccessControl1s
                     NET_ALARM_ACCESS_CTL_REPEAT_ENTER_INFO repeat_info = (NET_ALARM_ACCESS_CTL_REPEAT_ENTER_INFO)Marshal.PtrToStructure(pBuf, typeof(NET_ALARM_ACCESS_CTL_REPEAT_ENTER_INFO));
                     item.Text = Alarm_Index.ToString();
                     item.SubItems.Add(repeat_info.stuTime.ToString());
-                    item.SubItems.Add("RepeakIn(反潜)");
+                    item.SubItems.Add("RepeakIn");
                     item.SubItems.Add("");
                     item.SubItems.Add(repeat_info.szCardNo.ToString());
                     item.SubItems.Add(repeat_info.nDoor.ToString());
@@ -390,7 +385,7 @@ namespace AccessControl1s
                     NET_ALARM_ACCESS_CTL_DURESS_INFO duress_info = (NET_ALARM_ACCESS_CTL_DURESS_INFO)Marshal.PtrToStructure(pBuf, typeof(NET_ALARM_ACCESS_CTL_DURESS_INFO));
                     item.Text = Alarm_Index.ToString();
                     item.SubItems.Add(duress_info.stuTime.ToString());
-                    item.SubItems.Add("Duress(胁迫)");
+                    item.SubItems.Add("Duress");
                     item.SubItems.Add(duress_info.szUserID.ToString());
                     item.SubItems.Add(duress_info.szCardNo.ToString());
                     item.SubItems.Add(duress_info.nDoor.ToString());
@@ -415,11 +410,11 @@ namespace AccessControl1s
                     item.SubItems.Add(chassisintruded_info.stuTime.ToString());
                     if (chassisintruded_info.szReaderID.Length > 0)
                     {
-                        item.SubItems.Add("CardreaderAntidemolition(读卡器防拆)");
+                        item.SubItems.Add("CardreaderAntidemolition");
                     }
                     else
                     {
-                        item.SubItems.Add("ChassisIntruded(本机防拆)");
+                        item.SubItems.Add("ChassisIntruded");
                     }
                     item.SubItems.Add("");
                     item.SubItems.Add("");
@@ -427,11 +422,11 @@ namespace AccessControl1s
                     item.SubItems.Add("");
                     if (chassisintruded_info.nAction == ALARM_START)
                     {
-                        item.SubItems.Add("Start(开始)");
+                        item.SubItems.Add("Start");
                     }
                     else if (chassisintruded_info.nAction == ALARM_STOP)
                     {
-                        item.SubItems.Add("Stop(结束)");
+                        item.SubItems.Add("Stop");
                     }
                     else
                     {
@@ -454,18 +449,18 @@ namespace AccessControl1s
                     NET_ALARM_ALARM_INFO_EX2 alarm_info = (NET_ALARM_ALARM_INFO_EX2)Marshal.PtrToStructure(pBuf, typeof(NET_ALARM_ALARM_INFO_EX2));
                     item.Text = Alarm_Index.ToString();
                     item.SubItems.Add(alarm_info.stuTime.ToString());
-                    item.SubItems.Add("AlarmEx2(外部报警)");
+                    item.SubItems.Add("AlarmEx2");
                     item.SubItems.Add("");
                     item.SubItems.Add("");
                     item.SubItems.Add(alarm_info.nChannelID.ToString());
                     item.SubItems.Add("");
                     if (alarm_info.nAction == ALARM_START)
                     {
-                        item.SubItems.Add("Start(开始)");
+                        item.SubItems.Add("Start");
                     }
                     else if (alarm_info.nAction == ALARM_STOP)
                     {
-                        item.SubItems.Add("Stop(结束)");
+                        item.SubItems.Add("Stop");
                     }
                     else
                     {
@@ -504,7 +499,7 @@ namespace AccessControl1s
                 }
                 catch
                 {
-                    MessageBox.Show("Input port error(输入端口错误)");
+                    MessageBox.Show("Input port error");
                     return;
                 }
                 m_DeviceInfo = new NET_DEVICEINFO_Ex();
@@ -530,7 +525,7 @@ namespace AccessControl1s
                     m_IsListen = false;
 
                     listView_Event.Items.Clear();
-                    btn_StartListen.Text = "StartListen(开启订阅)";
+                    btn_StartListen.Text = "StartListen";
                 }
                 if (IntPtr.Zero != m_LoginID)
                 {
@@ -553,7 +548,7 @@ namespace AccessControl1s
 
         private void btn_OpenDoor_Click(object sender, EventArgs e)
         {
-            #region Open door 门禁控制-开门
+            #region Open door
             GetConfig();
             if (cfg.emState != EM_CFG_ACCESS_STATE.NORMAL)
             {
@@ -581,7 +576,7 @@ namespace AccessControl1s
             {
                 Marshal.FreeHGlobal(inPtr);
             }
-            MessageBox.Show("Open Door success(开门成功)");
+            MessageBox.Show("Open Door success");
             #endregion
         }
 
@@ -637,7 +632,7 @@ namespace AccessControl1s
 
         private void btn_CloseDoor_Click(object sender, EventArgs e)
         {
-            #region Close door 门禁控制-关门
+            #region Close door
 
             GetConfig();
             if (cfg.emState != EM_CFG_ACCESS_STATE.NORMAL)
@@ -664,7 +659,7 @@ namespace AccessControl1s
             {
                 Marshal.FreeHGlobal(inPtr);
             }
-            MessageBox.Show("Close door success(关门成功)");
+            MessageBox.Show("Close door success");
 
             #endregion
 
@@ -673,7 +668,7 @@ namespace AccessControl1s
 
         private void btn_OpenAlways_Click(object sender, EventArgs e)
         {
-            #region Open always 门禁配置-常开
+            #region Open always
 
             GetConfig();
             cfg.emState = EM_CFG_ACCESS_STATE.OPENALWAYS;
@@ -683,14 +678,14 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Always open success(常开成功)");
+            MessageBox.Show("Always open success");
 
             #endregion
         }
 
         private void btn_CloseAlways_Click(object sender, EventArgs e)
         {
-            #region Close always 门禁配置-常闭
+            #region Close always
 
             GetConfig();
             cfg.emState = EM_CFG_ACCESS_STATE.CLOSEALWAYS;
@@ -700,14 +695,14 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Always close success(常闭成功)");
+            MessageBox.Show("Always close success");
 
             #endregion
         }
 
         private void btn_GetDoorState_Click(object sender, EventArgs e)
         {
-            #region Query door state 查询门磁状态
+            #region Query door state
             NET_DOOR_STATUS_INFO info = new NET_DOOR_STATUS_INFO();
             info.dwSize = (uint)Marshal.SizeOf(typeof(NET_DOOR_STATUS_INFO));
             info.nChannel = Channel_comboBox.SelectedIndex;
@@ -723,13 +718,13 @@ namespace AccessControl1s
             switch (info.emStateType)
             {
                 case EM_NET_DOOR_STATUS_TYPE.BREAK:
-                    MessageBox.Show("Door abnormal unlock(门异常打开)");
+                    MessageBox.Show("Door abnormal unlock");
                     break;
                 case EM_NET_DOOR_STATUS_TYPE.CLOSE:
-                    MessageBox.Show("Door closed(门关闭)");
+                    MessageBox.Show("Door closed");
                     break;
                 case EM_NET_DOOR_STATUS_TYPE.OPEN:
-                    MessageBox.Show("Door opened(门打开)");
+                    MessageBox.Show("Door opened");
                     break;
                 case EM_NET_DOOR_STATUS_TYPE.UNKNOWN:
                     MessageBox.Show("Unknown");
@@ -773,7 +768,6 @@ namespace AccessControl1s
         {
             if (!m_IsListen)
             {
-                //设置报警回调
                 NETClient.SetDVRMessCallBack(m_AlarmCallBack, IntPtr.Zero);
                 bool ret = NETClient.StartListen(m_LoginID);
                 if (!ret)
@@ -783,7 +777,7 @@ namespace AccessControl1s
                 }
                 m_IsListen = true;
                 Alarm_Index = 1;
-                btn_StartListen.Text = "StopListen(停止订阅)";
+                btn_StartListen.Text = "StopListen";
             }
             else
             {
@@ -796,7 +790,7 @@ namespace AccessControl1s
                 Alarm_Index = 1;
                 m_IsListen = false;
                 listView_Event.Items.Clear();
-                btn_StartListen.Text = "StartListen(开启订阅)";
+                btn_StartListen.Text = "StartListen";
             }
         }
 
