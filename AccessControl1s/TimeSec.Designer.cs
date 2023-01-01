@@ -39,7 +39,7 @@
             this.MinimizeBox = false;
             this.Name = "TimeSec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TimeSec(时间段)";
+            this.Text = "TimeSec";
             this.Load += new System.EventHandler(this.TimeSec_Load);
             this.ResumeLayout(false);
 
