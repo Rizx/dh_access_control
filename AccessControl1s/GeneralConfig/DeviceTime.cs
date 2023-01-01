@@ -30,7 +30,7 @@ namespace AccessControl1s
 
             try
             {
-                #region time pick 时间选择显示
+                #region time pic时间选择显示
                 cmb_StartYear.Items.Clear();
                 cmb_StartMonth.Items.Clear();
                 cmb_StartHour.Items.Clear();
@@ -85,7 +85,7 @@ namespace AccessControl1s
                 }
 
             #endregion
-                #region load Deice Time 加载设备时间
+                #region load Deice Time
                 NET_TIME stuInfo = new NET_TIME();
 
                 bool ret = NETClient.QueryDeviceTime(loginID, ref stuInfo, 5000);
@@ -97,7 +97,7 @@ namespace AccessControl1s
                 dateTimePicker_DevTime.Value = stuInfo.ToDateTime();
                 #endregion
 
-                #region load NTP config 时间同步配置
+                #region load NTP config
                 GetConfig_NTP();
                 checkBox_NTPEnabled.Checked = cfg.bEnable;
                 this.textBox_NTPiP.Text = cfg.szAddress;
@@ -107,7 +107,7 @@ namespace AccessControl1s
                 this.textBox_Descrip.Text = cfg.szTimeZoneDesc;
                 #endregion
 
-                #region load Locales config 加载夏令时配置
+                #region load Locales config
                 bool bRet = GetConfig_Locales();
                 if (!bRet)
                 {
@@ -198,7 +198,7 @@ namespace AccessControl1s
 
         private void btn_GetTime_Click(object sender, EventArgs e)
         {
-            #region Get Deice Time 获取设备时间
+            #region Get Deice Time
             NET_TIME stuInfo = new NET_TIME();
 
             bool ret = NETClient.QueryDeviceTime(loginID, ref stuInfo, 5000);
@@ -214,7 +214,7 @@ namespace AccessControl1s
 
         private void btn_SetTime_Click(object sender, EventArgs e)
         {
-            #region Set Device Time设置设备时间
+            #region Set Device Time
             NET_TIME stuSet = new NET_TIME();
             stuSet.dwYear = (uint)dateTimePicker_DevTime.Value.Year;
             stuSet.dwMonth = (uint)dateTimePicker_DevTime.Value.Month;
@@ -229,13 +229,13 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Set Success(设置成功)");
+            MessageBox.Show("Set Success");
             #endregion
         }
 
         private void btn_GetNTP_Click(object sender, EventArgs e)
         {
-            #region Get NTP config 获取时间同步配置
+            #region Get NTP config
             try
             {
                 GetConfig_NTP();
@@ -257,7 +257,7 @@ namespace AccessControl1s
 
         private void btn_SetNTP_Click(object sender, EventArgs e)
         {
-            #region Set NTP config 设置时间同步配置
+            #region Set NTP config
 
             try
             {
@@ -281,7 +281,7 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Set Success(设置成功)");
+            MessageBox.Show("Set Success");
             #endregion
         }
 
@@ -333,7 +333,7 @@ namespace AccessControl1s
             return bRet;
         }
 
-        // Locales 配置
+        // Locales
 
         public bool GetConfig_Locales()
         {
@@ -423,7 +423,7 @@ namespace AccessControl1s
 
         private void button_SetDST_Click(object sender, EventArgs e)
         {
-            #region Set Locales config 设置夏令时配置
+            #region Set Locales config
          //   GetConfig_Locales();
             cfg_Locales.bDSTEnable = checkBox_DSTEnabled.Checked;
             if (comboBox_DSTType.SelectedIndex == 0)
@@ -471,13 +471,13 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Set Success(设置成功)");
+            MessageBox.Show("Set Success");
             #endregion
         }
 
         private void button_GetDST_Click(object sender, EventArgs e)
         {
-            #region Get Locales config 获取夏令时配置
+            #region Get Locales config
             try
             {
                 ResetDSTShow();
@@ -492,7 +492,6 @@ namespace AccessControl1s
                 comboBox_WeekNoStop.Enabled = true;
 
                 checkBox_DSTEnabled.Checked = cfg_Locales.bDSTEnable;
-                // 开始时间
                 if (cfg_Locales.stuDstStart.nYear < 1999)
                 {
                     return;
@@ -534,7 +533,6 @@ namespace AccessControl1s
                     cmb_StartDay.Enabled = false;
                 }
 
-                // 结束时间
                 cmb_StopYear.SelectedIndex = cfg_Locales.stuDstEnd.nYear - 2000;
                 cmb_StopMonth.SelectedIndex = cfg_Locales.stuDstEnd.nMonth - 1;
                 cmb_StopHour.SelectedIndex = cfg_Locales.stuDstEnd.nHour;

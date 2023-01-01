@@ -152,7 +152,7 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Set success(设置成功)");
+            MessageBox.Show("Set success");
         }
 
         private void button_Get2_Click(object sender, EventArgs e)
@@ -185,7 +185,7 @@ namespace AccessControl1s
 
             if (SetConfig(cfg))
             {
-                MessageBox.Show("Set successfully(设置成功)!");
+                MessageBox.Show("Set successfully!");
             }
             #endregion
         }

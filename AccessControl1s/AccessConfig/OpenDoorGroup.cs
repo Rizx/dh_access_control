@@ -226,7 +226,7 @@ namespace AccessControl1s
 
             if (SetConfig(cfg_info))
             {
-                MessageBox.Show("Set successfully(设置成功)");
+                MessageBox.Show("Set successfully");
             }
         }
 

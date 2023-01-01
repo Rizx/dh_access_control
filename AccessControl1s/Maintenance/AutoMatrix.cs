@@ -58,7 +58,7 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
- //           MessageBox.Show("Set successfully.(设置成功)");
+ //           MessageBox.Show("Set successfully.");
             #endregion
 
         }

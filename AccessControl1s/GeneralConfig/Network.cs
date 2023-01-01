@@ -28,7 +28,7 @@ namespace AccessControl1s
 
         private void Network_Load(object sender, EventArgs e)
         {
-            #region load network config 加载网络配置信息
+            #region load network config
             GetConfig_Network();
             for (int i = 0; i < cfg.nInterfaceNum; i++)
             {
@@ -52,7 +52,7 @@ namespace AccessControl1s
             #endregion
 
 
-            #region load auto register config 加载主动注册配置信息
+            #region load auto register config
 
             object obj = cfg_Dvrip;
             bool ret = NETClient.GetNewDevConfig(loginID, -1, "DVRIP", ref obj, typeof(NET_CFG_DVRIP_INFO), 5000);
@@ -72,20 +72,20 @@ namespace AccessControl1s
 
         private void button_SetNet_Click(object sender, EventArgs e)
         {
-            #region Set network config 设置网络配置
+            #region Set network config
             if (textBox_IPNet.Text == null || textBox_IPNet.Text == "")
             {
-                MessageBox.Show("Please input IP address(请输入IP地址)");
+                MessageBox.Show("Please input IP address");
                 return;
             }
             if (textBox_Mask.Text == null || textBox_Mask.Text == "")
             {
-                MessageBox.Show("Please input Mask(请输入子网掩码)");
+                MessageBox.Show("Please input Mask");
                 return;
             }
             if (textBox_GateWay.Text == null || textBox_GateWay.Text == "")
             {
-                MessageBox.Show("Please input Gate Way(请输入网关地址)");
+                MessageBox.Show("Please input Gate Way");
                 return;
             }
 
@@ -108,14 +108,14 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Set Success(设置成功)");
+            MessageBox.Show("Set Success");
 
             #endregion
         }
 
         private void button_GetNet_Click(object sender, EventArgs e)
         {
-            #region Get network config 获取网络配置信息
+            #region Get network config
             GetConfig_Network();
             for (int i = 0; i < cfg.nInterfaceNum; i++)
             {
@@ -233,20 +233,20 @@ namespace AccessControl1s
 
         private void button_SetAutoCfg_Click(object sender, EventArgs e)
         {
-            #region Set Dvrip config 设置主动注册配置
+            #region Set Dvrip config
             if (textBox_DvripIP.Text == null || textBox_DvripIP.Text == "")
             {
-                MessageBox.Show("Please input register IP(请输入注册IP地址)");
+                MessageBox.Show("Please input register IP");
                 return;
             }
             if (textBox_DevID.Text == null || textBox_DevID.Text == "")
             {
-                MessageBox.Show("Please input device ID(请输入设备ID)");
+                MessageBox.Show("Please input device ID");
                 return;
             }
             if (textBox_Port.Text == null || textBox_Port.Text == "")
             {
-                MessageBox.Show("Please input register Port(请输入注册端口号)");
+                MessageBox.Show("Please input register Port");
                 return;
             }
             ushort port;
@@ -256,7 +256,7 @@ namespace AccessControl1s
             }
             catch
             {
-                MessageBox.Show("The register port is error,the value must be 1-65535(注册端口号错误，值为1-65535)");
+                MessageBox.Show("The register port is error,the value must be 1-65535");
                 return;
             }
         //    GetConfig_Dvrip();
@@ -272,13 +272,13 @@ namespace AccessControl1s
                 MessageBox.Show(NETClient.GetLastError());
                 return;
             }
-            MessageBox.Show("Set Success(设置成功)");
+            MessageBox.Show("Set Success");
             #endregion
         }
 
         private void button_GetAutoCfg_Click(object sender, EventArgs e)
         {
-            #region Get auto register config 获取主动注册配置信息
+            #region Get auto register config 
 
             object obj = cfg_Dvrip;
             bool ret = NETClient.GetNewDevConfig(loginID, -1, "DVRIP", ref obj, typeof(NET_CFG_DVRIP_INFO), 5000);
