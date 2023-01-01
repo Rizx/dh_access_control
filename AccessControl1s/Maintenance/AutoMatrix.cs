@@ -26,7 +26,7 @@ namespace AccessControl1s
 
         private void AutoMatrix_Load(object sender, EventArgs e)
         {
-            #region load auto matrix config 加载自动维护配置
+            #region load auto matrix config 
             GetDevConfig_AutoMT();
             comboBox_RebootDay.SelectedIndex = cfg_AutoMT.byAutoRebootDay;
             comboBox_RebootTime.SelectedIndex = cfg_AutoMT.byAutoRebootTime;
@@ -36,7 +36,7 @@ namespace AccessControl1s
 
         private void button_GetAutoMatrix_Click(object sender, EventArgs e)
         {
-            #region Get auto matrix config 获取自动维护配置
+            #region Get auto matrix config
             GetDevConfig_AutoMT();
             comboBox_RebootDay.SelectedIndex = cfg_AutoMT.byAutoRebootDay;
             comboBox_RebootTime.SelectedIndex = cfg_AutoMT.byAutoRebootTime;
@@ -45,7 +45,7 @@ namespace AccessControl1s
 
         private void button_SetAutoMatrix_Click(object sender, EventArgs e)
         {
-            #region Set auto matrix config 设置自动维护配置
+            #region Set auto matrix config
      //       GetDevConfig_AutoMT();
             cfg_AutoMT.byAutoRebootDay = (byte)comboBox_RebootDay.SelectedIndex;
             cfg_AutoMT.byAutoRebootTime = (byte)comboBox_RebootTime.SelectedIndex;

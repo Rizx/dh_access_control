@@ -35,30 +35,30 @@ namespace AccessControl1s
 
         private void button_Modify_Click(object sender, EventArgs e)
         {
-            #region Modify Password 修改密码
+            #region Modify Password
             if (textBox_User.Text == null || textBox_User.Text == "")
             {
-                MessageBox.Show("Please input user name(请输入用户名)");
+                MessageBox.Show("Please input user name");
                 return;
             }
             if (textBox_OldPasswd.Text == null || textBox_OldPasswd.Text == "")
             {
-                MessageBox.Show("Please input old password(请输入旧用户名)");
+                MessageBox.Show("Please input old password");
                 return;
             }
             if (textBox_NewPasswd.Text == null || textBox_NewPasswd.Text == "")
             {
-                MessageBox.Show("Please input new password(请输入新密码)");
+                MessageBox.Show("Please input new password");
                 return;
             }
             if (textBox_Repeat.Text == null || textBox_Repeat.Text == "")
             {
-                MessageBox.Show("Please input check password(请输入确认密码)");
+                MessageBox.Show("Please input check password");
                 return;
             }
             if (textBox_Repeat.Text != textBox_NewPasswd.Text)
             {
-                MessageBox.Show("Two passwords are different, please check again.(两个密码不一致，请确认)");
+                MessageBox.Show("Two passwords are different, please check again.");
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace AccessControl1s
                 Marshal.FreeHGlobal(inPtr);
                 Marshal.FreeHGlobal(insubPtr);
             }
-            MessageBox.Show("Modify password successfully.(修改密码成功)");
+            MessageBox.Show("Modify password successfully.");
 
             #endregion
         }

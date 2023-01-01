@@ -26,7 +26,7 @@ namespace AccessControl1s
 
         private void button_RebootYes_Click(object sender, EventArgs e)
         {
-            #region Reboot Device 重启设备
+            #region Reboot Device
 
             IntPtr inPtr = IntPtr.Zero;
 

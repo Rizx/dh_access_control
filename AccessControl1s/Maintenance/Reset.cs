@@ -27,7 +27,7 @@ namespace AccessControl1s
 
         private void button_ResetYes_Click(object sender, EventArgs e)
         {
-            #region Reset Device 设备恢复出厂设置
+            #region Reset Device
             NET_IN_RESET_SYSTEM stuResetIn = new NET_IN_RESET_SYSTEM();
             stuResetIn.dwSize = (uint)Marshal.SizeOf(typeof(NET_IN_USERINFO_START_FIND));
 

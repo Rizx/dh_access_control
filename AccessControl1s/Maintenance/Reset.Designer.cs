@@ -52,7 +52,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 14);
             this.label2.TabIndex = 1;
-            this.label2.Text = "是否确认重置配置？";
+            this.label2.Text = "Are you sure to reset the configuration？";
             // 
             // button_ResetYes
             // 
@@ -60,7 +60,7 @@
             this.button_ResetYes.Name = "button_ResetYes";
             this.button_ResetYes.Size = new System.Drawing.Size(75, 32);
             this.button_ResetYes.TabIndex = 2;
-            this.button_ResetYes.Text = "Yes(是)";
+            this.button_ResetYes.Text = "Yes";
             this.button_ResetYes.UseVisualStyleBackColor = true;
             this.button_ResetYes.Click += new System.EventHandler(this.button_ResetYes_Click);
             // 
@@ -70,7 +70,7 @@
             this.button_ResetNo.Name = "button_ResetNo";
             this.button_ResetNo.Size = new System.Drawing.Size(75, 32);
             this.button_ResetNo.TabIndex = 3;
-            this.button_ResetNo.Text = "No(否)";
+            this.button_ResetNo.Text = "No";
             this.button_ResetNo.UseVisualStyleBackColor = true;
             this.button_ResetNo.Click += new System.EventHandler(this.button_ResetNo_Click);
             // 
@@ -87,7 +87,7 @@
             this.MinimizeBox = false;
             this.Name = "Reset";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Prompt(提示)";
+            this.Text = "Prompt";
             this.ResumeLayout(false);
             this.PerformLayout();
 
