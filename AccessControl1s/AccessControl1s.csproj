@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C160E953-EE65-4996-A843-65952F0BA8C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AccessControl1s</RootNamespace>
+    <AssemblyName>AccessControl1s</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessConfig\ABLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\ABLock.Designer.cs">
+      <DependentUpon>ABLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessConfig\DoorSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\DoorSelectForm.Designer.cs">
+      <DependentUpon>DoorSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessConfig\OpenDoorGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\OpenDoorGroup.Designer.cs">
+      <DependentUpon>OpenDoorGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessControlForm.Designer.cs">
+      <DependentUpon>AccessControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessConfig\DoorConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\DoorConfig.Designer.cs">
+      <DependentUpon>DoorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessConfig\FirstEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\FirstEnter.Designer.cs">
+      <DependentUpon>FirstEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessConfig\OpenDoorRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\OpenDoorRoute.Designer.cs">
+      <DependentUpon>OpenDoorRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessConfig\AccessPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\AccessPwd.Designer.cs">
+      <DependentUpon>AccessPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryRecord\DoorRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryRecord\DoorRecord.Designer.cs">
+      <DependentUpon>DoorRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryRecord\Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryRecord\Log.Designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\AutoMatrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\AutoMatrix.Designer.cs">
+      <DependentUpon>AutoMatrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralConfig\DeviceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralConfig\DeviceInfo.Designer.cs">
+      <DependentUpon>DeviceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralConfig\DeviceTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralConfig\DeviceTime.Designer.cs">
+      <DependentUpon>DeviceTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralConfig\Network.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralConfig\Network.Designer.cs">
+      <DependentUpon>Network.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\ModifyPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\ModifyPwd.Designer.cs">
+      <DependentUpon>ModifyPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maintenance\Reboot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Reboot.Designer.cs">
+      <DependentUpon>Reboot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Reset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Reset.Designer.cs">
+      <DependentUpon>Reset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Upgrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Upgrade.Designer.cs">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessConfig\TimeSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessConfig\TimeSchedule.Designer.cs">
+      <DependentUpon>TimeSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeSec.Designer.cs">
+      <DependentUpon>TimeSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement.Designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccessConfig\ABLock.resx">
+      <DependentUpon>ABLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessConfig\DoorSelectForm.resx">
+      <DependentUpon>DoorSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessConfig\OpenDoorGroup.resx">
+      <DependentUpon>OpenDoorGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessControlForm.resx">
+      <DependentUpon>AccessControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessConfig\DoorConfig.resx">
+      <DependentUpon>DoorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessConfig\FirstEnter.resx">
+      <DependentUpon>FirstEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessConfig\OpenDoorRoute.resx">
+      <DependentUpon>OpenDoorRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessConfig\AccessPwd.resx">
+      <DependentUpon>AccessPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryRecord\DoorRecord.resx">
+      <DependentUpon>DoorRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryRecord\Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\AutoMatrix.resx">
+      <DependentUpon>AutoMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralConfig\DeviceInfo.resx">
+      <DependentUpon>DeviceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralConfig\DeviceTime.resx">
+      <DependentUpon>DeviceTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralConfig\Network.resx">
+      <DependentUpon>Network.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\ModifyPwd.resx">
+      <DependentUpon>ModifyPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Reboot.resx">
+      <DependentUpon>Reboot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Reset.resx">
+      <DependentUpon>Reset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Upgrade.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessConfig\TimeSchedule.resx">
+      <DependentUpon>TimeSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeSec.resx">
+      <DependentUpon>TimeSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetSDKCS\NetSDKCS.csproj">
+      <Project>{60cfba25-f7ce-4140-a7e3-5355a25198e5}</Project>
+      <Name>NetSDKCS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
