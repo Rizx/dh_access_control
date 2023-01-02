@@ -31,6 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox_OperateType = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_CardNo = new System.Windows.Forms.Label();
             this.label_result = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button_GetUpdate = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label_CardNo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -72,9 +72,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox_OperateType);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
+            this.groupBox1.Location = new System.Drawing.Point(20, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(542, 69);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(813, 115);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operation Type";
@@ -88,14 +90,12 @@
             "Get",
             "Update",
             "Remove",
-            "Clear",
-            "InsertEX",
-            "UpdateEX"});
-            this.comboBox_OperateType.Location = new System.Drawing.Point(110, 31);
+            "Clear"});
+            this.comboBox_OperateType.Location = new System.Drawing.Point(165, 52);
+            this.comboBox_OperateType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_OperateType.Name = "comboBox_OperateType";
-            this.comboBox_OperateType.Size = new System.Drawing.Size(190, 20);
+            this.comboBox_OperateType.Size = new System.Drawing.Size(283, 28);
             this.comboBox_OperateType.TabIndex = 0;
-            this.comboBox_OperateType.Text = "Insert";
             this.comboBox_OperateType.SelectedIndexChanged += new System.EventHandler(this.comboBox_OperateType_SelectedIndexChanged);
             // 
             // groupBox2
@@ -134,36 +134,51 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 89);
+            this.groupBox2.Location = new System.Drawing.Point(20, 148);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(542, 541);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(813, 902);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Info";
             // 
+            // label_CardNo
+            // 
+            this.label_CardNo.AutoSize = true;
+            this.label_CardNo.Location = new System.Drawing.Point(598, 155);
+            this.label_CardNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_CardNo.Name = "label_CardNo";
+            this.label_CardNo.Size = new System.Drawing.Size(60, 20);
+            this.label_CardNo.TabIndex = 33;
+            this.label_CardNo.Text = "label16";
+            // 
             // label_result
             // 
             this.label_result.AutoSize = true;
-            this.label_result.Location = new System.Drawing.Point(208, 458);
+            this.label_result.Location = new System.Drawing.Point(312, 763);
+            this.label_result.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_result.Name = "label_result";
-            this.label_result.Size = new System.Drawing.Size(35, 12);
+            this.label_result.Size = new System.Drawing.Size(42, 20);
             this.label_result.TabIndex = 32;
             this.label_result.Text = "lable";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(305, 93);
+            this.label15.Location = new System.Drawing.Point(458, 155);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(95, 12);
+            this.label15.Size = new System.Drawing.Size(37, 20);
             this.label15.TabIndex = 31;
             this.label15.Text = "Hex";
             // 
             // button_GetUpdate
             // 
-            this.button_GetUpdate.Location = new System.Drawing.Point(156, 486);
+            this.button_GetUpdate.Location = new System.Drawing.Point(234, 810);
+            this.button_GetUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_GetUpdate.Name = "button_GetUpdate";
-            this.button_GetUpdate.Size = new System.Drawing.Size(105, 30);
+            this.button_GetUpdate.Size = new System.Drawing.Size(158, 50);
             this.button_GetUpdate.TabIndex = 30;
             this.button_GetUpdate.Text = "Get";
             this.button_GetUpdate.UseVisualStyleBackColor = true;
@@ -171,9 +186,10 @@
             // 
             // button_Insert
             // 
-            this.button_Insert.Location = new System.Drawing.Point(281, 486);
+            this.button_Insert.Location = new System.Drawing.Point(422, 810);
+            this.button_Insert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Insert.Name = "button_Insert";
-            this.button_Insert.Size = new System.Drawing.Size(105, 30);
+            this.button_Insert.Size = new System.Drawing.Size(158, 50);
             this.button_Insert.TabIndex = 29;
             this.button_Insert.Text = "Insert";
             this.button_Insert.UseVisualStyleBackColor = true;
@@ -181,9 +197,10 @@
             // 
             // button_GetPrint
             // 
-            this.button_GetPrint.Location = new System.Drawing.Point(281, 425);
+            this.button_GetPrint.Location = new System.Drawing.Point(422, 708);
+            this.button_GetPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_GetPrint.Name = "button_GetPrint";
-            this.button_GetPrint.Size = new System.Drawing.Size(75, 23);
+            this.button_GetPrint.Size = new System.Drawing.Size(112, 38);
             this.button_GetPrint.TabIndex = 28;
             this.button_GetPrint.Text = "Get";
             this.button_GetPrint.UseVisualStyleBackColor = true;
@@ -196,35 +213,39 @@
             this.comboBox_FirPrint.Items.AddRange(new object[] {
             "指纹1",
             "指纹2"});
-            this.comboBox_FirPrint.Location = new System.Drawing.Point(200, 425);
+            this.comboBox_FirPrint.Location = new System.Drawing.Point(300, 708);
+            this.comboBox_FirPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_FirPrint.Name = "comboBox_FirPrint";
-            this.comboBox_FirPrint.Size = new System.Drawing.Size(75, 20);
+            this.comboBox_FirPrint.Size = new System.Drawing.Size(110, 28);
             this.comboBox_FirPrint.TabIndex = 27;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 430);
+            this.label14.Location = new System.Drawing.Point(40, 717);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(119, 12);
+            this.label14.Size = new System.Drawing.Size(94, 20);
             this.label14.TabIndex = 26;
             this.label14.Text = "FingerPrint：";
             // 
             // checkBox_First
             // 
             this.checkBox_First.AutoSize = true;
-            this.checkBox_First.Location = new System.Drawing.Point(200, 397);
+            this.checkBox_First.Location = new System.Drawing.Point(300, 662);
+            this.checkBox_First.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBox_First.Name = "checkBox_First";
-            this.checkBox_First.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_First.Size = new System.Drawing.Size(22, 21);
             this.checkBox_First.TabIndex = 25;
             this.checkBox_First.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 397);
+            this.label13.Location = new System.Drawing.Point(40, 662);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(137, 12);
+            this.label13.Size = new System.Drawing.Size(87, 20);
             this.label13.TabIndex = 24;
             this.label13.Text = "FirstEnter：";
             // 
@@ -232,17 +253,19 @@
             // 
             this.dateTimePicker_ValidEnd.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker_ValidEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_ValidEnd.Location = new System.Drawing.Point(200, 365);
+            this.dateTimePicker_ValidEnd.Location = new System.Drawing.Point(300, 608);
+            this.dateTimePicker_ValidEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker_ValidEnd.Name = "dateTimePicker_ValidEnd";
-            this.dateTimePicker_ValidEnd.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker_ValidEnd.Size = new System.Drawing.Size(298, 26);
             this.dateTimePicker_ValidEnd.TabIndex = 23;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 369);
+            this.label12.Location = new System.Drawing.Point(40, 615);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(161, 12);
+            this.label12.Size = new System.Drawing.Size(108, 20);
             this.label12.TabIndex = 22;
             this.label12.Text = "ValidDateEnd";
             // 
@@ -250,42 +273,47 @@
             // 
             this.dateTimePicker_ValidStart.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker_ValidStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_ValidStart.Location = new System.Drawing.Point(200, 332);
+            this.dateTimePicker_ValidStart.Location = new System.Drawing.Point(300, 553);
+            this.dateTimePicker_ValidStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker_ValidStart.Name = "dateTimePicker_ValidStart";
-            this.dateTimePicker_ValidStart.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker_ValidStart.Size = new System.Drawing.Size(298, 26);
             this.dateTimePicker_ValidStart.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(27, 337);
+            this.label11.Location = new System.Drawing.Point(40, 562);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(173, 12);
+            this.label11.Size = new System.Drawing.Size(114, 20);
             this.label11.TabIndex = 20;
             this.label11.Text = "ValidDateStart";
             // 
             // textBox_UseTimes
             // 
-            this.textBox_UseTimes.Location = new System.Drawing.Point(200, 301);
+            this.textBox_UseTimes.Location = new System.Drawing.Point(300, 502);
+            this.textBox_UseTimes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_UseTimes.Name = "textBox_UseTimes";
-            this.textBox_UseTimes.Size = new System.Drawing.Size(100, 21);
+            this.textBox_UseTimes.Size = new System.Drawing.Size(148, 26);
             this.textBox_UseTimes.TabIndex = 19;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 307);
+            this.label10.Location = new System.Drawing.Point(40, 512);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 12);
+            this.label10.Size = new System.Drawing.Size(80, 20);
             this.label10.TabIndex = 18;
             this.label10.Text = "UseTime：";
             // 
             // button_TimeSec
             // 
-            this.button_TimeSec.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_TimeSec.Location = new System.Drawing.Point(200, 266);
+            this.button_TimeSec.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_TimeSec.Location = new System.Drawing.Point(300, 443);
+            this.button_TimeSec.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_TimeSec.Name = "button_TimeSec";
-            this.button_TimeSec.Size = new System.Drawing.Size(75, 23);
+            this.button_TimeSec.Size = new System.Drawing.Size(112, 38);
             this.button_TimeSec.TabIndex = 17;
             this.button_TimeSec.Text = "···";
             this.button_TimeSec.UseVisualStyleBackColor = true;
@@ -294,27 +322,30 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 273);
+            this.label9.Location = new System.Drawing.Point(40, 455);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 12);
+            this.label9.Size = new System.Drawing.Size(105, 20);
             this.label9.TabIndex = 16;
             this.label9.Text = "TimeSection：";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 243);
+            this.label8.Location = new System.Drawing.Point(40, 405);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 12);
+            this.label8.Size = new System.Drawing.Size(60, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Doors：";
             // 
             // button_Door
             // 
-            this.button_Door.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_Door.Location = new System.Drawing.Point(200, 235);
+            this.button_Door.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_Door.Location = new System.Drawing.Point(300, 392);
+            this.button_Door.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Door.Name = "button_Door";
-            this.button_Door.Size = new System.Drawing.Size(75, 23);
+            this.button_Door.Size = new System.Drawing.Size(112, 38);
             this.button_Door.TabIndex = 14;
             this.button_Door.Text = "···";
             this.button_Door.UseVisualStyleBackColor = true;
@@ -323,17 +354,19 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 213);
+            this.label7.Location = new System.Drawing.Point(40, 355);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 12);
+            this.label7.Size = new System.Drawing.Size(120, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "CardPassword：";
             // 
             // textBox_CardPwd
             // 
-            this.textBox_CardPwd.Location = new System.Drawing.Point(200, 206);
+            this.textBox_CardPwd.Location = new System.Drawing.Point(300, 343);
+            this.textBox_CardPwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_CardPwd.Name = "textBox_CardPwd";
-            this.textBox_CardPwd.Size = new System.Drawing.Size(100, 21);
+            this.textBox_CardPwd.Size = new System.Drawing.Size(148, 26);
             this.textBox_CardPwd.TabIndex = 12;
             this.textBox_CardPwd.UseSystemPasswordChar = true;
             // 
@@ -350,9 +383,10 @@
             "BlackList",
             "Duress",
             "MotherCard"});
-            this.comboBox_CardType.Location = new System.Drawing.Point(200, 178);
+            this.comboBox_CardType.Location = new System.Drawing.Point(300, 297);
+            this.comboBox_CardType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_CardType.Name = "comboBox_CardType";
-            this.comboBox_CardType.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_CardType.Size = new System.Drawing.Size(180, 28);
             this.comboBox_CardType.TabIndex = 11;
             // 
             // comboBox_CardStatus
@@ -365,111 +399,114 @@
             "Lose",
             "LogOff",
             "Freeze"});
-            this.comboBox_CardStatus.Location = new System.Drawing.Point(200, 150);
+            this.comboBox_CardStatus.Location = new System.Drawing.Point(300, 250);
+            this.comboBox_CardStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_CardStatus.Name = "comboBox_CardStatus";
-            this.comboBox_CardStatus.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_CardStatus.Size = new System.Drawing.Size(180, 28);
             this.comboBox_CardStatus.TabIndex = 10;
             // 
             // textBox_UserID
             // 
-            this.textBox_UserID.Location = new System.Drawing.Point(200, 118);
+            this.textBox_UserID.Location = new System.Drawing.Point(300, 197);
+            this.textBox_UserID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_UserID.Name = "textBox_UserID";
-            this.textBox_UserID.Size = new System.Drawing.Size(100, 21);
+            this.textBox_UserID.Size = new System.Drawing.Size(148, 26);
             this.textBox_UserID.TabIndex = 9;
             // 
             // textBox_CardNo
             // 
-            this.textBox_CardNo.Location = new System.Drawing.Point(200, 89);
+            this.textBox_CardNo.Location = new System.Drawing.Point(300, 148);
+            this.textBox_CardNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_CardNo.Name = "textBox_CardNo";
-            this.textBox_CardNo.Size = new System.Drawing.Size(100, 21);
+            this.textBox_CardNo.Size = new System.Drawing.Size(148, 26);
             this.textBox_CardNo.TabIndex = 8;
             // 
             // dateTimePicker_CreateTime
             // 
             this.dateTimePicker_CreateTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker_CreateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_CreateTime.Location = new System.Drawing.Point(200, 55);
+            this.dateTimePicker_CreateTime.Location = new System.Drawing.Point(300, 92);
+            this.dateTimePicker_CreateTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker_CreateTime.Name = "dateTimePicker_CreateTime";
-            this.dateTimePicker_CreateTime.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker_CreateTime.Size = new System.Drawing.Size(298, 26);
             this.dateTimePicker_CreateTime.TabIndex = 7;
             // 
             // textBox_RecNo
             // 
-            this.textBox_RecNo.Location = new System.Drawing.Point(200, 27);
+            this.textBox_RecNo.Location = new System.Drawing.Point(300, 45);
+            this.textBox_RecNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_RecNo.Name = "textBox_RecNo";
-            this.textBox_RecNo.Size = new System.Drawing.Size(100, 21);
+            this.textBox_RecNo.Size = new System.Drawing.Size(148, 26);
             this.textBox_RecNo.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 182);
+            this.label6.Location = new System.Drawing.Point(40, 303);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 12);
+            this.label6.Size = new System.Drawing.Size(85, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "CardType：";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 151);
+            this.label5.Location = new System.Drawing.Point(40, 252);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 12);
+            this.label5.Size = new System.Drawing.Size(98, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "CardStatus：";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 123);
+            this.label4.Location = new System.Drawing.Point(40, 205);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 12);
+            this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "UserID：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 94);
+            this.label3.Location = new System.Drawing.Point(40, 157);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 12);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "CardNo：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 60);
+            this.label2.Location = new System.Drawing.Point(40, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 12);
+            this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "CreateTime：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 30);
+            this.label1.Location = new System.Drawing.Point(40, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 12);
+            this.label1.Size = new System.Drawing.Size(66, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "RecNo：";
             // 
-            // label_CardNo
-            // 
-            this.label_CardNo.AutoSize = true;
-            this.label_CardNo.Location = new System.Drawing.Point(399, 93);
-            this.label_CardNo.Name = "label_CardNo";
-            this.label_CardNo.Size = new System.Drawing.Size(47, 12);
-            this.label_CardNo.TabIndex = 33;
-            this.label_CardNo.Text = "label16";
-            // 
             // UserManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 642);
+            this.ClientSize = new System.Drawing.Size(850, 1050);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserManagement";
