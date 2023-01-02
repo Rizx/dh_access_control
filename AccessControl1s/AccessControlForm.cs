@@ -97,6 +97,7 @@ namespace AccessControl1s
         {
             this.Text = titleName;
             btn_Login.Text = "Login";
+            BackColor = Color.LightCoral;
             InitOrCloseOtherUI();
         }
 
