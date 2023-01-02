@@ -1,0 +1,5 @@
+C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\bin\x64\Debug\NetSDKCS.dll
+C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\bin\x64\Debug\NetSDKCS.pdb
+C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\obj\x64\Debug\NetSDKCS.csprojResolveAssemblyReference.cache
+C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\obj\x64\Debug\NetSDKCS.dll
+C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\obj\x64\Debug\NetSDKCS.pdb
