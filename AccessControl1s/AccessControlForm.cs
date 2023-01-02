@@ -64,7 +64,7 @@ namespace AccessControl1s
                 {
                     dwSize = (uint)Marshal.SizeOf(typeof(NET_LOG_SET_PRINT_INFO))
                 };
-                // NETClient.LogOpen(logInfo);
+                //NETClient.LogOpen(logInfo);
                 NETClient.SetAutoReconnect(m_ReConnectCallBack, IntPtr.Zero);
             }
             catch (Exception ex)
@@ -83,6 +83,21 @@ namespace AccessControl1s
             this.Text = titleName + " -- Offline";
             m_bOnline = false;
             InitOrCloseOtherUI();
+
+            if (m_IsListen)
+            {
+                BackColor = Color.LightCoral;
+                bool ret = NETClient.StopListen(m_LoginID);
+                if (!ret)
+                {
+                    MessageBox.Show(this, NETClient.GetLastError());
+                    return;
+                }
+                Alarm_Index = 1;
+                m_IsListen = false;
+                listView_Event.Items.Clear();
+                btn_StartListen.Text = "StartListen";
+            }
         }
 
         private void UpdateReConnectUI()
@@ -90,6 +105,36 @@ namespace AccessControl1s
             this.Text = titleName + " -- Online";
             m_bOnline = true;
             OpenOtherUI();
+
+            if (m_IsListen)
+            {
+                bool ret = NETClient.StopListen(m_LoginID);
+                if (!ret)
+                {
+                    MessageBox.Show(this, NETClient.GetLastError());
+                    return;
+                }
+                Alarm_Index = 1;
+                m_IsListen = false;
+                listView_Event.Items.Clear();
+                btn_StartListen.Text = "StartListen";
+                BackColor = Color.LightCoral;
+            }
+
+            if (!m_IsListen)
+            {
+                NETClient.SetDVRMessCallBack(m_AlarmCallBack, IntPtr.Zero);
+                bool ret = NETClient.StartListen(m_LoginID);
+                if (!ret)
+                {
+                    MessageBox.Show(this, NETClient.GetLastError());
+                    return;
+                }
+                m_IsListen = true;
+                Alarm_Index = 1;
+                btn_StartListen.Text = "StopListen";
+                BackColor = SystemColors.Control;
+            }
         }
 
 
