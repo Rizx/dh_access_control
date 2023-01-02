@@ -98,7 +98,7 @@
             this.groupBox_DevLogin.Controls.Add(this.label2);
             this.groupBox_DevLogin.Controls.Add(this.ip_textBox);
             this.groupBox_DevLogin.Controls.Add(this.label1);
-            this.groupBox_DevLogin.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_DevLogin.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_DevLogin.Location = new System.Drawing.Point(16, 32);
             this.groupBox_DevLogin.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_DevLogin.Name = "groupBox_DevLogin";
@@ -110,7 +110,7 @@
             // 
             // btn_Login
             // 
-            this.btn_Login.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.Location = new System.Drawing.Point(663, 27);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Login.Name = "btn_Login";
@@ -122,96 +122,95 @@
             // 
             // pwd_textBox
             // 
-            this.pwd_textBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwd_textBox.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pwd_textBox.Location = new System.Drawing.Point(535, 29);
             this.pwd_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.pwd_textBox.Name = "pwd_textBox";
-            this.pwd_textBox.Size = new System.Drawing.Size(120, 21);
+            this.pwd_textBox.Size = new System.Drawing.Size(120, 28);
             this.pwd_textBox.TabIndex = 7;
             this.pwd_textBox.Text = "admin123";
-            this.pwd_textBox.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(445, 35);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 12);
+            this.label4.Size = new System.Drawing.Size(89, 18);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password:";
             // 
             // user_textBox
             // 
-            this.user_textBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_textBox.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user_textBox.Location = new System.Drawing.Point(383, 31);
             this.user_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.user_textBox.Name = "user_textBox";
-            this.user_textBox.Size = new System.Drawing.Size(53, 21);
+            this.user_textBox.Size = new System.Drawing.Size(53, 28);
             this.user_textBox.TabIndex = 5;
             this.user_textBox.Text = "admin";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(301, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 12);
+            this.label3.Size = new System.Drawing.Size(53, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Name:";
             // 
             // port_textBox
             // 
-            this.port_textBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.port_textBox.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.port_textBox.Location = new System.Drawing.Point(248, 33);
             this.port_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.port_textBox.Name = "port_textBox";
-            this.port_textBox.Size = new System.Drawing.Size(43, 21);
+            this.port_textBox.Size = new System.Drawing.Size(43, 28);
             this.port_textBox.TabIndex = 3;
             this.port_textBox.Text = "37777";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(178, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 12);
+            this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Port:";
             // 
             // ip_textBox
             // 
-            this.ip_textBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ip_textBox.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ip_textBox.Location = new System.Drawing.Point(79, 35);
             this.ip_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.ip_textBox.Name = "ip_textBox";
-            this.ip_textBox.Size = new System.Drawing.Size(92, 21);
+            this.ip_textBox.Size = new System.Drawing.Size(92, 28);
             this.ip_textBox.TabIndex = 1;
             this.ip_textBox.Text = "192.168.1.2";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 12);
+            this.label1.Size = new System.Drawing.Size(35, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "IP:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.Size = new System.Drawing.Size(44, 18);
             this.label5.TabIndex = 7;
             this.label5.Text = "Door";
             // 
@@ -219,11 +218,11 @@
             // 
             this.Channel_comboBox.BackColor = System.Drawing.SystemColors.Window;
             this.Channel_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Channel_comboBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Channel_comboBox.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Channel_comboBox.FormattingEnabled = true;
             this.Channel_comboBox.Location = new System.Drawing.Point(96, 17);
             this.Channel_comboBox.Name = "Channel_comboBox";
-            this.Channel_comboBox.Size = new System.Drawing.Size(70, 20);
+            this.Channel_comboBox.Size = new System.Drawing.Size(70, 26);
             this.Channel_comboBox.TabIndex = 8;
             this.Channel_comboBox.SelectedIndexChanged += new System.EventHandler(this.Channel_comboBox_SelectedIndexChanged);
             // 
@@ -244,7 +243,7 @@
             // 
             // btn_GetDoorState
             // 
-            this.btn_GetDoorState.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_GetDoorState.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GetDoorState.Location = new System.Drawing.Point(505, 55);
             this.btn_GetDoorState.Name = "btn_GetDoorState";
             this.btn_GetDoorState.Size = new System.Drawing.Size(160, 23);
@@ -255,7 +254,7 @@
             // 
             // btn_CloseAlways
             // 
-            this.btn_CloseAlways.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CloseAlways.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CloseAlways.Location = new System.Drawing.Point(354, 55);
             this.btn_CloseAlways.Name = "btn_CloseAlways";
             this.btn_CloseAlways.Size = new System.Drawing.Size(120, 23);
@@ -266,7 +265,7 @@
             // 
             // btn_OpenAlways
             // 
-            this.btn_OpenAlways.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_OpenAlways.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_OpenAlways.Location = new System.Drawing.Point(186, 55);
             this.btn_OpenAlways.Name = "btn_OpenAlways";
             this.btn_OpenAlways.Size = new System.Drawing.Size(120, 23);
@@ -278,7 +277,7 @@
             // btn_OpenDoor
             // 
             this.btn_OpenDoor.Enabled = false;
-            this.btn_OpenDoor.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_OpenDoor.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_OpenDoor.Location = new System.Drawing.Point(186, 17);
             this.btn_OpenDoor.Name = "btn_OpenDoor";
             this.btn_OpenDoor.Size = new System.Drawing.Size(120, 23);
@@ -289,7 +288,7 @@
             // 
             // btn_CloseDoor
             // 
-            this.btn_CloseDoor.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CloseDoor.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CloseDoor.Location = new System.Drawing.Point(354, 17);
             this.btn_CloseDoor.Name = "btn_CloseDoor";
             this.btn_CloseDoor.Size = new System.Drawing.Size(120, 23);
@@ -300,6 +299,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_GeneralCfg,
             this.MenuTool_Mainte,
@@ -308,7 +308,7 @@
             this.MenuTool_QueryRecord});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 33);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -319,7 +319,7 @@
             this.MenuTool_Net,
             this.MenuTool_DevTime});
             this.Menu_GeneralCfg.Name = "Menu_GeneralCfg";
-            this.Menu_GeneralCfg.Size = new System.Drawing.Size(159, 21);
+            this.Menu_GeneralCfg.Size = new System.Drawing.Size(136, 29);
             this.Menu_GeneralCfg.Text = "GeneralConfig";
             // 
             // MenuTool_DevInfo
@@ -333,14 +333,14 @@
             // MenuTool_Net
             // 
             this.MenuTool_Net.Name = "MenuTool_Net";
-            this.MenuTool_Net.Size = new System.Drawing.Size(182, 22);
+            this.MenuTool_Net.Size = new System.Drawing.Size(165, 30);
             this.MenuTool_Net.Text = "Network";
             this.MenuTool_Net.Click += new System.EventHandler(this.MenuTool_Net_Click);
             // 
             // MenuTool_DevTime
             // 
             this.MenuTool_DevTime.Name = "MenuTool_DevTime";
-            this.MenuTool_DevTime.Size = new System.Drawing.Size(182, 22);
+            this.MenuTool_DevTime.Size = new System.Drawing.Size(165, 30);
             this.MenuTool_DevTime.Text = "DevTime";
             this.MenuTool_DevTime.Click += new System.EventHandler(this.MenuTool_DevTime_Click);
             // 
@@ -354,53 +354,53 @@
             this.MenuTool_Upgrade,
             this.MenuTool_AutoMatrix});
             this.MenuTool_Mainte.Name = "MenuTool_Mainte";
-            this.MenuTool_Mainte.Size = new System.Drawing.Size(150, 21);
+            this.MenuTool_Mainte.Size = new System.Drawing.Size(124, 29);
             this.MenuTool_Mainte.Text = "Maintenance";
             // 
             // MenuTool_ModifyPwd
             // 
             this.MenuTool_ModifyPwd.Name = "MenuTool_ModifyPwd";
-            this.MenuTool_ModifyPwd.Size = new System.Drawing.Size(197, 22);
+            this.MenuTool_ModifyPwd.Size = new System.Drawing.Size(187, 30);
             this.MenuTool_ModifyPwd.Text = "ModifyPwd";
             this.MenuTool_ModifyPwd.Click += new System.EventHandler(this.MenuTool_ModifyPwd_Click);
             // 
             // MenuTool_Reboot
             // 
             this.MenuTool_Reboot.Name = "MenuTool_Reboot";
-            this.MenuTool_Reboot.Size = new System.Drawing.Size(197, 22);
+            this.MenuTool_Reboot.Size = new System.Drawing.Size(187, 30);
             this.MenuTool_Reboot.Text = "Reboot";
             this.MenuTool_Reboot.Click += new System.EventHandler(this.MenuTool_Reboot_Click);
             // 
             // MenuTool_Reset
             // 
             this.MenuTool_Reset.Name = "MenuTool_Reset";
-            this.MenuTool_Reset.Size = new System.Drawing.Size(197, 22);
+            this.MenuTool_Reset.Size = new System.Drawing.Size(187, 30);
             this.MenuTool_Reset.Text = "Reset";
             this.MenuTool_Reset.Click += new System.EventHandler(this.MenuTool_Reset_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(194, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
             // 
             // MenuTool_Upgrade
             // 
             this.MenuTool_Upgrade.Name = "MenuTool_Upgrade";
-            this.MenuTool_Upgrade.Size = new System.Drawing.Size(197, 22);
+            this.MenuTool_Upgrade.Size = new System.Drawing.Size(187, 30);
             this.MenuTool_Upgrade.Text = "Upgrade";
             this.MenuTool_Upgrade.Click += new System.EventHandler(this.MenuTool_Upgrade_Click);
             // 
             // MenuTool_AutoMatrix
             // 
             this.MenuTool_AutoMatrix.Name = "MenuTool_AutoMatrix";
-            this.MenuTool_AutoMatrix.Size = new System.Drawing.Size(197, 22);
+            this.MenuTool_AutoMatrix.Size = new System.Drawing.Size(187, 30);
             this.MenuTool_AutoMatrix.Text = "AutoMatrix";
             this.MenuTool_AutoMatrix.Click += new System.EventHandler(this.MenuTool_AutoMatrix_Click);
             // 
             // MenuTool_UserMgmt
             // 
             this.MenuTool_UserMgmt.Name = "MenuTool_UserMgmt";
-            this.MenuTool_UserMgmt.Size = new System.Drawing.Size(180, 21);
+            this.MenuTool_UserMgmt.Size = new System.Drawing.Size(164, 29);
             this.MenuTool_UserMgmt.Text = "UserManagement";
             this.MenuTool_UserMgmt.Click += new System.EventHandler(this.MenuTool_UserMgmt_Click);
             // 
@@ -481,7 +481,7 @@
             this.MenuTool_DoorRecord,
             this.MenuTool_Log});
             this.MenuTool_QueryRecord.Name = "MenuTool_QueryRecord";
-            this.MenuTool_QueryRecord.Size = new System.Drawing.Size(153, 21);
+            this.MenuTool_QueryRecord.Size = new System.Drawing.Size(127, 29);
             this.MenuTool_QueryRecord.Text = "QueryRecord";
             // 
             // MenuTool_DoorRecord
@@ -583,14 +583,15 @@
             // 
             // AccessControlForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCoral;
             this.ClientSize = new System.Drawing.Size(975, 654);
             this.Controls.Add(this.groupBox_StartListen);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox_DevLogin);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;

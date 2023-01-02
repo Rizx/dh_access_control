@@ -72,6 +72,8 @@ namespace AccessControl1s
                 MessageBox.Show(ex.Message);
                 Process.GetCurrentProcess().Kill();
             }
+
+            btn_Login_Click(sender, e);
         }
 
         #region Update UI
@@ -102,6 +104,7 @@ namespace AccessControl1s
         {
             this.Text = titleName + " -- Online";
             btn_Login.Text = "Logout";
+            BackColor = SystemColors.Control;
 
             m_bOnline = true;
 
@@ -511,6 +514,20 @@ namespace AccessControl1s
                     return;
                 }
                 LoginUI();
+
+                if (!m_IsListen)
+                {
+                    NETClient.SetDVRMessCallBack(m_AlarmCallBack, IntPtr.Zero);
+                    bool ret = NETClient.StartListen(m_LoginID);
+                    if (!ret)
+                    {
+                        MessageBox.Show(this, NETClient.GetLastError());
+                        return;
+                    }
+                    m_IsListen = true;
+                    Alarm_Index = 1;
+                    btn_StartListen.Text = "StopListen";
+                }
             }
             else
             {
@@ -526,6 +543,7 @@ namespace AccessControl1s
 
                     listView_Event.Items.Clear();
                     btn_StartListen.Text = "StartListen";
+                    BackColor = Color.LightCoral;
                 }
                 if (IntPtr.Zero != m_LoginID)
                 {
@@ -791,6 +809,7 @@ namespace AccessControl1s
                 m_IsListen = false;
                 listView_Event.Items.Clear();
                 btn_StartListen.Text = "StartListen";
+                BackColor = Color.LightCoral;
             }
         }
 
