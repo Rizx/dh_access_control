@@ -11,11 +11,18 @@ using NetSDKCS;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using IO.Swagger.Api;
+using IO.Swagger.Model;
 
 namespace AccessControl1s
 {
     public partial class AccessControlForm : Form
     {
+        private const string CARD_MASTER = "000000";
+        private const int GUEST_HOURS = 24
+            ;
+        private readonly List<Tuple<string, DateTime>> guestList = new List<Tuple<string, DateTime>>();
+
         private static readonly string titleName = "AccessControl";
         private IntPtr m_LoginID = IntPtr.Zero;
 
@@ -277,7 +284,9 @@ namespace AccessControl1s
                     NET_ALARM_ACCESS_CTL_EVENT_INFO access_info = (NET_ALARM_ACCESS_CTL_EVENT_INFO)Marshal.PtrToStructure(pBuf, typeof(NET_ALARM_ACCESS_CTL_EVENT_INFO));
                     item.Text = Alarm_Index.ToString();
                     item.SubItems.Add(access_info.stuTime.ToString());
-                    item.SubItems.Add("Entry");
+                    if (access_info.nDoor.ToString() == "0")
+                        item.SubItems.Add("Entry");
+                    else item.SubItems.Add("Exit");
                     item.SubItems.Add(Encoding.Default.GetString(access_info.szUserID));
                     item.SubItems.Add(access_info.szCardNo.ToString());
                     item.SubItems.Add(access_info.nDoor.ToString());
@@ -348,6 +357,12 @@ namespace AccessControl1s
                         }
                         listView_Event.EndUpdate();
                     }));
+
+                    this.BeginInvoke(new Action(() =>
+                    {
+                        SendActivity(item);
+                    }));
+
                     Alarm_Index++;
                     break;
                 case EM_ALARM_TYPE.ALARM_ACCESS_CTL_NOT_CLOSE:
@@ -533,6 +548,99 @@ namespace AccessControl1s
             }
 
             return true;
+        }
+
+        private void SendActivity(ListViewItem item)
+        {
+            var time = item.SubItems[0];
+            var type = item.SubItems[1];
+            var person = item.SubItems[2];
+            var card = item.SubItems[3];
+            var door = item.SubItems[4];
+            var opentype = item.SubItems[5];
+            var state = item.SubItems[6];
+
+            // save guest
+            if (state.Text.ToLower() == "success" && type.Text == "Entry" && card.Text == CARD_MASTER)
+            {
+                var guestSubItem = listView_Event.Items[1];
+                guestList.Insert(0, new Tuple<string, DateTime>(guestSubItem.SubItems[3].Text, DateTime.Now));
+                if (guestList.Count > 100)
+                {
+                    guestList.RemoveAt(100);
+                }
+
+                try
+                {
+                    HistoryApi api = new HistoryApi();
+                    api.ApiHistoryPost(new HistoryRequest(type.Text, string.Format("{0} (Tamu)", guestSubItem.SubItems[3].Text, "success")));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("SendActivity.Guest.Entry : " + ex.Message);
+                }
+            }
+            // open portal if guest
+            else if (state.Text.ToLower() == "fail" && type.Text == "Exit")
+            {
+                Tuple<string, DateTime> guestSelected = null;
+                foreach (var guest in guestList)
+                {
+                    if (guest.Item1 == card.Text && guest.Item2.AddHours(GUEST_HOURS) > DateTime.Now)
+                    {
+                        guestSelected = guest;
+                        Channel_comboBox.SelectedIndex = int.Parse(door.Text);
+                        btn_OpenDoor_Click(null, null);
+
+                        try
+                        {
+                            HistoryApi api = new HistoryApi();
+                            api.ApiHistoryPost(new HistoryRequest(type.Text, card.Text, "success"));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("SendActivity.Guest.Exit : " + ex.Message);
+                        }
+
+                        break;
+                    }
+                }
+
+                if (guestSelected != null)
+                {
+                    guestList.RemoveAll(x => x.Item1 == guestSelected.Item1);
+                }
+            }
+            else if (state.Text.ToLower() == "success")
+            {
+                try
+                {
+                    HistoryApi api = new HistoryApi();
+                    api.ApiHistoryPost(new HistoryRequest(type.Text, card.Text, "success"));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("SendActivity.Success : " + ex.Message);
+                }
+            }
+        }
+
+        private void OpenPortalGuest(ListViewItem item)
+        {
+            var time = item.SubItems[0];
+            var type = item.SubItems[1];
+            var person = item.SubItems[2];
+            var card = item.SubItems[3];
+            var door = item.SubItems[4];
+            var opentype = item.SubItems[5];
+            var state = item.SubItems[6];
+
+            if (type.Text == "Exit")
+            {
+
+            }
+            
+
         }
 
         #endregion
