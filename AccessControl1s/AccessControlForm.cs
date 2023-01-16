@@ -13,12 +13,16 @@ using System.IO;
 using System.Runtime.InteropServices;
 using IO.Swagger.Api;
 using IO.Swagger.Model;
+using OpenCvSharp;
+using OpenCvSharp.Extensions;
+using System.Threading;
+using System.Security.Cryptography;
 
 namespace AccessControl1s
 {
     public partial class AccessControlForm : Form
     {
-        private const string CARD_MASTER = "000000";
+        private const string CARD_MASTER = "CB04F5AA";
         private const int GUEST_HOURS = 24
             ;
         private readonly List<Tuple<string, DateTime>> guestList = new List<Tuple<string, DateTime>>();
@@ -51,9 +55,110 @@ namespace AccessControl1s
             }
         }
 
+        #region Video
+        VideoCapture capture;
+        Mat frame;
+        byte[] image;
+        #endregion
+
+        #region Camera
+        char cforKeyDown = '\0';
+        int _lastKeystroke = DateTime.Now.Millisecond;
+        List<char> _barcode = new List<char>(1);
+        bool UseKeyboard = false;
+        #endregion
+
+        private const string BASE_URL = "http://192.168.1.200:5000/";
         public AccessControlForm()
         {
             InitializeComponent();
+
+            textBox1.KeyDown += new KeyEventHandler(BarcodeReader_KeyDown);
+            textBox1.KeyUp += new KeyEventHandler(BarcodeReader_KeyUp);
+        }
+
+        private void SendTid(string tid)
+        {
+            Thread.Sleep(2000);
+            HistoryApi api = new HistoryApi(BASE_URL);
+            frame = new Mat();
+            capture = new VideoCapture(0);
+            capture.Open(0);
+            if (capture.IsOpened())
+            {
+                capture.Read(frame);
+                ImageConverter converter = new ImageConverter();
+                var bitmap = BitmapConverter.ToBitmap(frame);
+                image = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
+
+                //guestList.Insert(0, new Tuple<string, DateTime>(tid, DateTime.Now));
+                //if (guestList.Count > 100)
+                //{
+                //    guestList.RemoveAt(100);
+                //}
+            }
+            //try
+            //{
+            //    await api.ApiHistoryPostAsync(new HistoryRequest("Entry", tid, true, "success", image));
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //Channel_comboBox.SelectedIndex = 1;
+            //btn_OpenDoor_Click(null, null);
+
+            frame = null;
+            textBox1.Text = "";
+        }
+
+        private void BarcodeReader_KeyUp(object sender, KeyEventArgs e)
+        {
+            /* check if keydown and keyup is not different
+             * and keydown event is not fired again before the keyup event fired for the same key
+             * and keydown is not null
+             * Barcode never fired keydown event more than 1 time before the same key fired keyup event
+             * Barcode generally finishes all events (like keydown > keypress > keyup) of single key at a time, if two different keys are pressed then it is with keyboard
+             */
+            if ((cforKeyDown != (char)e.KeyCode) || (cforKeyDown == '\0'))
+            {
+                cforKeyDown = '\0';
+                _barcode.Clear();
+                return;
+            }
+
+            // getting the time difference between 2 keys
+            int elapsed = (DateTime.Now.Millisecond - _lastKeystroke);
+
+            /*
+             * Barcode scanner usually takes less than 17 milliseconds to read, increase this if neccessary of your barcode scanner is slower
+             * also assuming human can not type faster than 17 milliseconds
+             */
+            if (elapsed > 17)
+                _barcode.Clear();
+
+            // Do not push in array if Enter/Return is pressed, since it is not any Character that need to be read
+            if (e.KeyCode != Keys.Return)
+            {
+                _barcode.Add((char)e.KeyData);
+            }
+
+            // Barcode scanner hits Enter/Return after reading barcode
+            if (e.KeyCode == Keys.Return && _barcode.Count > 0)
+            {
+                string BarCodeData = new String(_barcode.ToArray());
+                if (!UseKeyboard)
+                    SendTid(BarCodeData);
+                _barcode.Clear();
+            }
+
+            // update the last key press strock time
+            _lastKeystroke = DateTime.Now.Millisecond;
+        }
+
+        private void BarcodeReader_KeyDown(object sender, KeyEventArgs e)
+        {
+            cforKeyDown = (char)e.KeyCode;
         }
 
         private void AccessControl1s_Load(object sender, EventArgs e)
@@ -274,8 +379,13 @@ namespace AccessControl1s
             this.BeginInvoke((Action)UpdateReConnectUI);
         }
 
+        private static bool _running;
         private bool AlarmCallBack(int lCommand, IntPtr lLoginID, IntPtr pBuf, uint dwBufLen, IntPtr pchDVRIP, int nDVRPort, bool bAlarmAckFlag, int nEventID, IntPtr dwUser)
         {
+            if (_running)
+                return true;
+            _running = true;
+
             EM_ALARM_TYPE type = (EM_ALARM_TYPE)lCommand;
             var item = new ListViewItem();
             switch (type)
@@ -284,7 +394,7 @@ namespace AccessControl1s
                     NET_ALARM_ACCESS_CTL_EVENT_INFO access_info = (NET_ALARM_ACCESS_CTL_EVENT_INFO)Marshal.PtrToStructure(pBuf, typeof(NET_ALARM_ACCESS_CTL_EVENT_INFO));
                     item.Text = Alarm_Index.ToString();
                     item.SubItems.Add(access_info.stuTime.ToString());
-                    if (access_info.nDoor.ToString() == "0")
+                    if (access_info.nDoor.ToString() == "1")
                         item.SubItems.Add("Entry");
                     else item.SubItems.Add("Exit");
                     item.SubItems.Add(Encoding.Default.GetString(access_info.szUserID));
@@ -360,7 +470,7 @@ namespace AccessControl1s
 
                     this.BeginInvoke(new Action(() =>
                     {
-                        SendActivity(item);
+                        SendActivityToAPI(item);
                     }));
 
                     Alarm_Index++;
@@ -547,24 +657,26 @@ namespace AccessControl1s
                     break;
             }
 
+            _running = false;
             return true;
         }
 
-        private void SendActivity(ListViewItem item)
+        private async void SendActivityToAPI(ListViewItem item)
         {
-            var time = item.SubItems[0];
-            var type = item.SubItems[1];
-            var person = item.SubItems[2];
-            var card = item.SubItems[3];
-            var door = item.SubItems[4];
-            var opentype = item.SubItems[5];
-            var state = item.SubItems[6];
+            var time = item.SubItems[1];
+            var type = item.SubItems[2];
+            var person = item.SubItems[3];
+            var card = item.SubItems[4];
+            var door = item.SubItems[5];
+            var opentype = item.SubItems[6];
+            var state = item.SubItems[7];
 
-            // save guest
-            if (state.Text.ToLower() == "success" && type.Text == "Entry" && card.Text == CARD_MASTER)
+            HistoryApi api = new HistoryApi(BASE_URL);
+
+            // open portal if guest
+            if (state.Text.ToLower() != "success" && type.Text == "Entry" && image != null)
             {
-                var guestSubItem = listView_Event.Items[1];
-                guestList.Insert(0, new Tuple<string, DateTime>(guestSubItem.SubItems[3].Text, DateTime.Now));
+                guestList.Insert(0, new Tuple<string, DateTime>(card.Text, DateTime.Now));
                 if (guestList.Count > 100)
                 {
                     guestList.RemoveAt(100);
@@ -572,16 +684,19 @@ namespace AccessControl1s
 
                 try
                 {
-                    HistoryApi api = new HistoryApi();
-                    api.ApiHistoryPost(new HistoryRequest(type.Text, string.Format("{0} (Tamu)", guestSubItem.SubItems[3].Text, "success")));
+                    await api.ApiHistoryPostAsync(new HistoryRequest("Entry", card.Text, true, "success", image));
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("SendActivity.Guest.Entry : " + ex.Message);
                 }
+
+                Channel_comboBox.SelectedIndex = 1;
+                btn_OpenDoor_Click(null, null);
+                image = null;
             }
             // open portal if guest
-            else if (state.Text.ToLower() == "fail" && type.Text == "Exit")
+            else if (state.Text.ToLower() != "success" && type.Text == "Exit")
             {
                 Tuple<string, DateTime> guestSelected = null;
                 foreach (var guest in guestList)
@@ -589,13 +704,13 @@ namespace AccessControl1s
                     if (guest.Item1 == card.Text && guest.Item2.AddHours(GUEST_HOURS) > DateTime.Now)
                     {
                         guestSelected = guest;
-                        Channel_comboBox.SelectedIndex = int.Parse(door.Text);
+
+                        Channel_comboBox.SelectedIndex = 0;
                         btn_OpenDoor_Click(null, null);
 
                         try
                         {
-                            HistoryApi api = new HistoryApi();
-                            api.ApiHistoryPost(new HistoryRequest(type.Text, card.Text, "success"));
+                            await api.ApiHistoryPostAsync(new HistoryRequest(type.Text, card.Text, true, "success"));
                         }
                         catch (Exception ex)
                         {
@@ -604,6 +719,10 @@ namespace AccessControl1s
 
                         break;
                     }
+                    else if (guest.Item1 == card.Text && guest.Item2.AddHours(GUEST_HOURS) < DateTime.Now)
+                    { 
+                        guestSelected = guest;
+                    }
                 }
 
                 if (guestSelected != null)
@@ -611,12 +730,11 @@ namespace AccessControl1s
                     guestList.RemoveAll(x => x.Item1 == guestSelected.Item1);
                 }
             }
-            else if (state.Text.ToLower() == "success")
+            else if (card.Text != "00000000" && state.Text.ToLower() == "success")
             {
                 try
                 {
-                    HistoryApi api = new HistoryApi();
-                    api.ApiHistoryPost(new HistoryRequest(type.Text, card.Text, "success"));
+                    await api.ApiHistoryPostAsync(new HistoryRequest(type.Text, card.Text, false, "success"));
                 }
                 catch (Exception ex)
                 {
@@ -748,7 +866,6 @@ namespace AccessControl1s
             {
                 Marshal.FreeHGlobal(inPtr);
             }
-            MessageBox.Show("Open Door success");
             #endregion
         }
 

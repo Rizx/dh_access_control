@@ -78,8 +78,8 @@ namespace IO.Swagger.Test
         public void ApiCameraStreamingGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? id = null;
-            //instance.ApiCameraStreamingGet(id);
+            //string name = null;
+            //instance.ApiCameraStreamingGet(name);
             
         }
         /// <summary>

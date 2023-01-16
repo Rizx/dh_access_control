@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Channel_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_GetDoorState = new System.Windows.Forms.Button();
             this.btn_CloseAlways = new System.Windows.Forms.Button();
             this.btn_OpenAlways = new System.Windows.Forms.Button();
@@ -81,6 +82,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_StartListen = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox_DevLogin.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -116,6 +118,7 @@
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(90, 23);
             this.btn_Login.TabIndex = 12;
+            this.btn_Login.TabStop = false;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
@@ -128,7 +131,8 @@
             this.pwd_textBox.Name = "pwd_textBox";
             this.pwd_textBox.Size = new System.Drawing.Size(120, 28);
             this.pwd_textBox.TabIndex = 7;
-            this.pwd_textBox.Text = "admin123";
+            this.pwd_textBox.TabStop = false;
+            this.pwd_textBox.Text = "123456";
             // 
             // label4
             // 
@@ -149,6 +153,7 @@
             this.user_textBox.Name = "user_textBox";
             this.user_textBox.Size = new System.Drawing.Size(53, 28);
             this.user_textBox.TabIndex = 5;
+            this.user_textBox.TabStop = false;
             this.user_textBox.Text = "admin";
             // 
             // label3
@@ -170,6 +175,7 @@
             this.port_textBox.Name = "port_textBox";
             this.port_textBox.Size = new System.Drawing.Size(43, 28);
             this.port_textBox.TabIndex = 3;
+            this.port_textBox.TabStop = false;
             this.port_textBox.Text = "37777";
             // 
             // label2
@@ -191,6 +197,7 @@
             this.ip_textBox.Name = "ip_textBox";
             this.ip_textBox.Size = new System.Drawing.Size(92, 28);
             this.ip_textBox.TabIndex = 1;
+            this.ip_textBox.TabStop = false;
             this.ip_textBox.Text = "192.168.1.2";
             // 
             // label1
@@ -224,6 +231,7 @@
             this.Channel_comboBox.Name = "Channel_comboBox";
             this.Channel_comboBox.Size = new System.Drawing.Size(70, 26);
             this.Channel_comboBox.TabIndex = 8;
+            this.Channel_comboBox.TabStop = false;
             this.Channel_comboBox.SelectedIndexChanged += new System.EventHandler(this.Channel_comboBox_SelectedIndexChanged);
             // 
             // groupBox2
@@ -241,6 +249,13 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(760, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 31);
+            this.textBox1.TabIndex = 1;
+            // 
             // btn_GetDoorState
             // 
             this.btn_GetDoorState.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,6 +263,7 @@
             this.btn_GetDoorState.Name = "btn_GetDoorState";
             this.btn_GetDoorState.Size = new System.Drawing.Size(160, 23);
             this.btn_GetDoorState.TabIndex = 13;
+            this.btn_GetDoorState.TabStop = false;
             this.btn_GetDoorState.Text = "GetDoorState";
             this.btn_GetDoorState.UseVisualStyleBackColor = true;
             this.btn_GetDoorState.Click += new System.EventHandler(this.btn_GetDoorState_Click);
@@ -259,6 +275,7 @@
             this.btn_CloseAlways.Name = "btn_CloseAlways";
             this.btn_CloseAlways.Size = new System.Drawing.Size(120, 23);
             this.btn_CloseAlways.TabIndex = 12;
+            this.btn_CloseAlways.TabStop = false;
             this.btn_CloseAlways.Text = "CloseAlways";
             this.btn_CloseAlways.UseVisualStyleBackColor = true;
             this.btn_CloseAlways.Click += new System.EventHandler(this.btn_CloseAlways_Click);
@@ -270,6 +287,7 @@
             this.btn_OpenAlways.Name = "btn_OpenAlways";
             this.btn_OpenAlways.Size = new System.Drawing.Size(120, 23);
             this.btn_OpenAlways.TabIndex = 11;
+            this.btn_OpenAlways.TabStop = false;
             this.btn_OpenAlways.Text = "OpenAlways";
             this.btn_OpenAlways.UseVisualStyleBackColor = true;
             this.btn_OpenAlways.Click += new System.EventHandler(this.btn_OpenAlways_Click);
@@ -282,6 +300,7 @@
             this.btn_OpenDoor.Name = "btn_OpenDoor";
             this.btn_OpenDoor.Size = new System.Drawing.Size(120, 23);
             this.btn_OpenDoor.TabIndex = 10;
+            this.btn_OpenDoor.TabStop = false;
             this.btn_OpenDoor.Text = "OpenDoor";
             this.btn_OpenDoor.UseVisualStyleBackColor = true;
             this.btn_OpenDoor.Click += new System.EventHandler(this.btn_OpenDoor_Click);
@@ -293,12 +312,14 @@
             this.btn_CloseDoor.Name = "btn_CloseDoor";
             this.btn_CloseDoor.Size = new System.Drawing.Size(120, 23);
             this.btn_CloseDoor.TabIndex = 9;
+            this.btn_CloseDoor.TabStop = false;
             this.btn_CloseDoor.Text = "CloseDoor";
             this.btn_CloseDoor.UseVisualStyleBackColor = true;
             this.btn_CloseDoor.Click += new System.EventHandler(this.btn_CloseDoor_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_GeneralCfg,
@@ -319,7 +340,7 @@
             this.MenuTool_Net,
             this.MenuTool_DevTime});
             this.Menu_GeneralCfg.Name = "Menu_GeneralCfg";
-            this.Menu_GeneralCfg.Size = new System.Drawing.Size(136, 29);
+            this.Menu_GeneralCfg.Size = new System.Drawing.Size(140, 29);
             this.Menu_GeneralCfg.Text = "GeneralConfig";
             // 
             // MenuTool_DevInfo
@@ -333,14 +354,14 @@
             // MenuTool_Net
             // 
             this.MenuTool_Net.Name = "MenuTool_Net";
-            this.MenuTool_Net.Size = new System.Drawing.Size(165, 30);
+            this.MenuTool_Net.Size = new System.Drawing.Size(270, 34);
             this.MenuTool_Net.Text = "Network";
             this.MenuTool_Net.Click += new System.EventHandler(this.MenuTool_Net_Click);
             // 
             // MenuTool_DevTime
             // 
             this.MenuTool_DevTime.Name = "MenuTool_DevTime";
-            this.MenuTool_DevTime.Size = new System.Drawing.Size(165, 30);
+            this.MenuTool_DevTime.Size = new System.Drawing.Size(270, 34);
             this.MenuTool_DevTime.Text = "DevTime";
             this.MenuTool_DevTime.Click += new System.EventHandler(this.MenuTool_DevTime_Click);
             // 
@@ -354,53 +375,53 @@
             this.MenuTool_Upgrade,
             this.MenuTool_AutoMatrix});
             this.MenuTool_Mainte.Name = "MenuTool_Mainte";
-            this.MenuTool_Mainte.Size = new System.Drawing.Size(124, 29);
+            this.MenuTool_Mainte.Size = new System.Drawing.Size(128, 29);
             this.MenuTool_Mainte.Text = "Maintenance";
             // 
             // MenuTool_ModifyPwd
             // 
             this.MenuTool_ModifyPwd.Name = "MenuTool_ModifyPwd";
-            this.MenuTool_ModifyPwd.Size = new System.Drawing.Size(187, 30);
+            this.MenuTool_ModifyPwd.Size = new System.Drawing.Size(205, 34);
             this.MenuTool_ModifyPwd.Text = "ModifyPwd";
             this.MenuTool_ModifyPwd.Click += new System.EventHandler(this.MenuTool_ModifyPwd_Click);
             // 
             // MenuTool_Reboot
             // 
             this.MenuTool_Reboot.Name = "MenuTool_Reboot";
-            this.MenuTool_Reboot.Size = new System.Drawing.Size(187, 30);
+            this.MenuTool_Reboot.Size = new System.Drawing.Size(205, 34);
             this.MenuTool_Reboot.Text = "Reboot";
             this.MenuTool_Reboot.Click += new System.EventHandler(this.MenuTool_Reboot_Click);
             // 
             // MenuTool_Reset
             // 
             this.MenuTool_Reset.Name = "MenuTool_Reset";
-            this.MenuTool_Reset.Size = new System.Drawing.Size(187, 30);
+            this.MenuTool_Reset.Size = new System.Drawing.Size(205, 34);
             this.MenuTool_Reset.Text = "Reset";
             this.MenuTool_Reset.Click += new System.EventHandler(this.MenuTool_Reset_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(202, 6);
             // 
             // MenuTool_Upgrade
             // 
             this.MenuTool_Upgrade.Name = "MenuTool_Upgrade";
-            this.MenuTool_Upgrade.Size = new System.Drawing.Size(187, 30);
+            this.MenuTool_Upgrade.Size = new System.Drawing.Size(205, 34);
             this.MenuTool_Upgrade.Text = "Upgrade";
             this.MenuTool_Upgrade.Click += new System.EventHandler(this.MenuTool_Upgrade_Click);
             // 
             // MenuTool_AutoMatrix
             // 
             this.MenuTool_AutoMatrix.Name = "MenuTool_AutoMatrix";
-            this.MenuTool_AutoMatrix.Size = new System.Drawing.Size(187, 30);
+            this.MenuTool_AutoMatrix.Size = new System.Drawing.Size(205, 34);
             this.MenuTool_AutoMatrix.Text = "AutoMatrix";
             this.MenuTool_AutoMatrix.Click += new System.EventHandler(this.MenuTool_AutoMatrix_Click);
             // 
             // MenuTool_UserMgmt
             // 
             this.MenuTool_UserMgmt.Name = "MenuTool_UserMgmt";
-            this.MenuTool_UserMgmt.Size = new System.Drawing.Size(164, 29);
+            this.MenuTool_UserMgmt.Size = new System.Drawing.Size(168, 29);
             this.MenuTool_UserMgmt.Text = "UserManagement";
             this.MenuTool_UserMgmt.Click += new System.EventHandler(this.MenuTool_UserMgmt_Click);
             // 
@@ -481,7 +502,7 @@
             this.MenuTool_DoorRecord,
             this.MenuTool_Log});
             this.MenuTool_QueryRecord.Name = "MenuTool_QueryRecord";
-            this.MenuTool_QueryRecord.Size = new System.Drawing.Size(127, 29);
+            this.MenuTool_QueryRecord.Size = new System.Drawing.Size(131, 29);
             this.MenuTool_QueryRecord.Text = "QueryRecord";
             // 
             // MenuTool_DoorRecord
@@ -502,6 +523,8 @@
             // 
             // groupBox_StartListen
             // 
+            this.groupBox_StartListen.Controls.Add(this.label6);
+            this.groupBox_StartListen.Controls.Add(this.textBox1);
             this.groupBox_StartListen.Controls.Add(this.listView_Event);
             this.groupBox_StartListen.Controls.Add(this.btn_StartListen);
             this.groupBox_StartListen.Location = new System.Drawing.Point(16, 213);
@@ -524,10 +547,12 @@
             this.columnHeader8});
             this.listView_Event.FullRowSelect = true;
             this.listView_Event.GridLines = true;
+            this.listView_Event.HideSelection = false;
             this.listView_Event.Location = new System.Drawing.Point(8, 63);
             this.listView_Event.Name = "listView_Event";
             this.listView_Event.Size = new System.Drawing.Size(926, 328);
             this.listView_Event.TabIndex = 1;
+            this.listView_Event.TabStop = false;
             this.listView_Event.UseCompatibleStateImageBehavior = false;
             this.listView_Event.View = System.Windows.Forms.View.Details;
             // 
@@ -577,9 +602,21 @@
             this.btn_StartListen.Name = "btn_StartListen";
             this.btn_StartListen.Size = new System.Drawing.Size(169, 23);
             this.btn_StartListen.TabIndex = 0;
+            this.btn_StartListen.TabStop = false;
             this.btn_StartListen.Text = "StartListen";
             this.btn_StartListen.UseVisualStyleBackColor = true;
             this.btn_StartListen.Click += new System.EventHandler(this.btn_StartListen_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(691, 34);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 18);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Tag ID";
             // 
             // AccessControlForm
             // 
@@ -605,6 +642,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox_StartListen.ResumeLayout(false);
+            this.groupBox_StartListen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,6 +703,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
     }
 }
 

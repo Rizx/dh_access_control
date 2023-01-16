@@ -3,3 +3,9 @@ C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\bin\x64\R
 C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\obj\x64\Release\NetSDKCS.csprojResolveAssemblyReference.cache
 C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\obj\x64\Release\NetSDKCS.dll
 C:\Users\PROSES1\Desktop\General_NetSDK\Demos\AccessControl1s\NetSDKCS\obj\x64\Release\NetSDKCS.pdb
+C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\NetSDKCS\bin\x64\Release\NetSDKCS.dll
+C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\NetSDKCS\bin\x64\Release\NetSDKCS.pdb
+C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\NetSDKCS\obj\x64\Release\NetSDKCS.csproj.AssemblyReference.cache
+C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\NetSDKCS\obj\x64\Release\NetSDKCS.csproj.CoreCompileInputs.cache
+C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\NetSDKCS\obj\x64\Release\NetSDKCS.dll
+C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\NetSDKCS\obj\x64\Release\NetSDKCS.pdb

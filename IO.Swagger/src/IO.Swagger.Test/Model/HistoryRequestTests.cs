@@ -82,12 +82,28 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Cardid'
         }
         /// <summary>
+        /// Test the property 'Guest'
+        /// </summary>
+        [Test]
+        public void GuestTest()
+        {
+            // TODO unit test for the property 'Guest'
+        }
+        /// <summary>
         /// Test the property 'State'
         /// </summary>
         [Test]
         public void StateTest()
         {
             // TODO unit test for the property 'State'
+        }
+        /// <summary>
+        /// Test the property 'Image'
+        /// </summary>
+        [Test]
+        public void ImageTest()
+        {
+            // TODO unit test for the property 'Image'
         }
 
     }

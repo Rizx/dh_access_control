@@ -34,12 +34,16 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="activity">activity.</param>
         /// <param name="cardid">cardid.</param>
+        /// <param name="guest">guest.</param>
         /// <param name="state">state.</param>
-        public HistoryRequest(string activity = default(string), string cardid = default(string), string state = default(string))
+        /// <param name="image">image.</param>
+        public HistoryRequest(string activity = default(string), string cardid = default(string), bool? guest = default(bool?), string state = default(string), byte[] image = default(byte[]))
         {
             this.Activity = activity;
             this.Cardid = cardid;
+            this.Guest = guest;
             this.State = state;
+            this.Image = image;
         }
         
         /// <summary>
@@ -55,10 +59,22 @@ namespace IO.Swagger.Model
         public string Cardid { get; set; }
 
         /// <summary>
+        /// Gets or Sets Guest
+        /// </summary>
+        [DataMember(Name="guest", EmitDefaultValue=false)]
+        public bool? Guest { get; set; }
+
+        /// <summary>
         /// Gets or Sets State
         /// </summary>
         [DataMember(Name="state", EmitDefaultValue=false)]
         public string State { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Image
+        /// </summary>
+        [DataMember(Name="image", EmitDefaultValue=false)]
+        public byte[] Image { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,7 +86,9 @@ namespace IO.Swagger.Model
             sb.Append("class HistoryRequest {\n");
             sb.Append("  Activity: ").Append(Activity).Append("\n");
             sb.Append("  Cardid: ").Append(Cardid).Append("\n");
+            sb.Append("  Guest: ").Append(Guest).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  Image: ").Append(Image).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,9 +134,19 @@ namespace IO.Swagger.Model
                     this.Cardid.Equals(input.Cardid))
                 ) && 
                 (
+                    this.Guest == input.Guest ||
+                    (this.Guest != null &&
+                    this.Guest.Equals(input.Guest))
+                ) && 
+                (
                     this.State == input.State ||
                     (this.State != null &&
                     this.State.Equals(input.State))
+                ) && 
+                (
+                    this.Image == input.Image ||
+                    (this.Image != null &&
+                    this.Image.Equals(input.Image))
                 );
         }
 
@@ -135,8 +163,12 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Activity.GetHashCode();
                 if (this.Cardid != null)
                     hashCode = hashCode * 59 + this.Cardid.GetHashCode();
+                if (this.Guest != null)
+                    hashCode = hashCode * 59 + this.Guest.GetHashCode();
                 if (this.State != null)
                     hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.Image != null)
+                    hashCode = hashCode * 59 + this.Image.GetHashCode();
                 return hashCode;
             }
         }

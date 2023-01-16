@@ -48,9 +48,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns></returns>
-        void ApiCameraStreamingGet (long? id = null);
+        void ApiCameraStreamingGet (string name = null);
 
         /// <summary>
         /// 
@@ -59,9 +59,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiCameraStreamingGetWithHttpInfo (long? id = null);
+        ApiResponse<Object> ApiCameraStreamingGetWithHttpInfo (string name = null);
         /// <summary>
         /// 
         /// </summary>
@@ -109,9 +109,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiCameraStreamingGetAsync (long? id = null);
+        System.Threading.Tasks.Task ApiCameraStreamingGetAsync (string name = null);
 
         /// <summary>
         /// 
@@ -120,9 +120,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiCameraStreamingGetAsyncWithHttpInfo (long? id = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiCameraStreamingGetAsyncWithHttpInfo (string name = null);
         /// <summary>
         /// 
         /// </summary>
@@ -372,20 +372,20 @@ namespace IO.Swagger.Api
         ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns></returns>
-        public void ApiCameraStreamingGet (long? id = null)
+        public void ApiCameraStreamingGet (string name = null)
         {
-             ApiCameraStreamingGetWithHttpInfo(id);
+             ApiCameraStreamingGetWithHttpInfo(name);
         }
 
         /// <summary>
         ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ApiCameraStreamingGetWithHttpInfo (long? id = null)
+        public ApiResponse<Object> ApiCameraStreamingGetWithHttpInfo (string name = null)
         {
 
             var localVarPath = "/api/camera/streaming";
@@ -408,7 +408,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (name != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "name", name)); // query parameter
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
@@ -432,11 +432,11 @@ namespace IO.Swagger.Api
         ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiCameraStreamingGetAsync (long? id = null)
+        public async System.Threading.Tasks.Task ApiCameraStreamingGetAsync (string name = null)
         {
-             await ApiCameraStreamingGetAsyncWithHttpInfo(id);
+             await ApiCameraStreamingGetAsyncWithHttpInfo(name);
 
         }
 
@@ -444,9 +444,9 @@ namespace IO.Swagger.Api
         ///  
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id"> (optional)</param>
+        /// <param name="name"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiCameraStreamingGetAsyncWithHttpInfo (long? id = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiCameraStreamingGetAsyncWithHttpInfo (string name = null)
         {
 
             var localVarPath = "/api/camera/streaming";
@@ -469,7 +469,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (id != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (name != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "name", name)); // query parameter
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
