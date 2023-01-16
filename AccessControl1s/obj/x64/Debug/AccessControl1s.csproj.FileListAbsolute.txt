@@ -88,3 +88,4 @@ C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\AccessControl1s\
 C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\AccessControl1s\obj\x64\Debug\AccessControl1s.csproj.AssemblyReference.cache
 C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\AccessControl1s\obj\x64\Debug\AccessControl1s.csproj.CoreCompileInputs.cache
 C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\AccessControl1s\obj\x64\Debug\AccessControl1s.csproj.CopyComplete
+C:\Users\PROSES1\Documents\Zain\PersonalProject\AccessControl1s\AccessControl1s\bin\x64Debug\Gma.System.MouseKeyHook.dll

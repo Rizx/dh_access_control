@@ -41,12 +41,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Channel_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_GetDoorState = new System.Windows.Forms.Button();
             this.btn_CloseAlways = new System.Windows.Forms.Button();
             this.btn_OpenAlways = new System.Windows.Forms.Button();
             this.btn_OpenDoor = new System.Windows.Forms.Button();
             this.btn_CloseDoor = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Menu_GeneralCfg = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuTool_DevInfo = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +72,7 @@
             this.MenuTool_DoorRecord = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuTool_Log = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_StartListen = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.listView_Event = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -82,7 +83,6 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_StartListen = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox_DevLogin.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -249,13 +249,6 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(760, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 31);
-            this.textBox1.TabIndex = 1;
-            // 
             // btn_GetDoorState
             // 
             this.btn_GetDoorState.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -317,6 +310,14 @@
             this.btn_CloseDoor.UseVisualStyleBackColor = true;
             this.btn_CloseDoor.Click += new System.EventHandler(this.btn_CloseDoor_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(760, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 31);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Visible = false;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
@@ -354,14 +355,14 @@
             // MenuTool_Net
             // 
             this.MenuTool_Net.Name = "MenuTool_Net";
-            this.MenuTool_Net.Size = new System.Drawing.Size(270, 34);
+            this.MenuTool_Net.Size = new System.Drawing.Size(183, 34);
             this.MenuTool_Net.Text = "Network";
             this.MenuTool_Net.Click += new System.EventHandler(this.MenuTool_Net_Click);
             // 
             // MenuTool_DevTime
             // 
             this.MenuTool_DevTime.Name = "MenuTool_DevTime";
-            this.MenuTool_DevTime.Size = new System.Drawing.Size(270, 34);
+            this.MenuTool_DevTime.Size = new System.Drawing.Size(183, 34);
             this.MenuTool_DevTime.Text = "DevTime";
             this.MenuTool_DevTime.Click += new System.EventHandler(this.MenuTool_DevTime_Click);
             // 
@@ -534,6 +535,18 @@
             this.groupBox_StartListen.TabStop = false;
             this.groupBox_StartListen.Text = "Listen Event";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(691, 34);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 18);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Tag ID";
+            this.label6.Visible = false;
+            // 
             // listView_Event
             // 
             this.listView_Event.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -607,17 +620,6 @@
             this.btn_StartListen.UseVisualStyleBackColor = true;
             this.btn_StartListen.Click += new System.EventHandler(this.btn_StartListen_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(691, 34);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 18);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Tag ID";
-            // 
             // AccessControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
@@ -634,6 +636,7 @@
             this.MaximizeBox = false;
             this.Name = "AccessControlForm";
             this.Text = "AccessControl1sDemo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AccessControlForm_FormClosing);
             this.Load += new System.EventHandler(this.AccessControl1s_Load);
             this.groupBox_DevLogin.ResumeLayout(false);
             this.groupBox_DevLogin.PerformLayout();

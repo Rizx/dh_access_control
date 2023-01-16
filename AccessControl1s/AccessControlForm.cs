@@ -17,14 +17,14 @@ using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System.Threading;
 using System.Security.Cryptography;
+using Gma.System.MouseKeyHook;
 
 namespace AccessControl1s
 {
     public partial class AccessControlForm : Form
     {
         private const string CARD_MASTER = "CB04F5AA";
-        private const int GUEST_HOURS = 24
-            ;
+        private const int GUEST_HOURS = 24;
         private readonly List<Tuple<string, DateTime>> guestList = new List<Tuple<string, DateTime>>();
 
         private static readonly string titleName = "AccessControl";
@@ -68,13 +68,61 @@ namespace AccessControl1s
         bool UseKeyboard = false;
         #endregion
 
+        private IKeyboardMouseEvents m_GlobalHook;
+
         private const string BASE_URL = "http://192.168.1.200:5000/";
         public AccessControlForm()
         {
             InitializeComponent();
 
-            textBox1.KeyDown += new KeyEventHandler(BarcodeReader_KeyDown);
-            textBox1.KeyUp += new KeyEventHandler(BarcodeReader_KeyUp);
+            //textBox1.KeyDown += new KeyEventHandler(BarcodeReader_KeyDown);
+            //textBox1.KeyUp += new KeyEventHandler(BarcodeReader_KeyUp);
+
+            m_GlobalHook = Hook.GlobalEvents();
+            m_GlobalHook.KeyPress += GlobalHookKeyPress;
+        }
+
+        private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
+        {
+            /* check if keydown and keyup is not different
+             * and keydown event is not fired again before the keyup event fired for the same key
+             * and keydown is not null
+             * Barcode never fired keydown event more than 1 time before the same key fired keyup event
+             * Barcode generally finishes all events (like keydown > keypress > keyup) of single key at a time, if two different keys are pressed then it is with keyboard
+             */
+            //if (e.KeyChar == '\0')
+            //{
+            //    _barcode.Clear();
+            //    return;
+            //}
+
+            // getting the time difference between 2 keys
+            int elapsed = (DateTime.Now.Millisecond - _lastKeystroke);
+            Console.WriteLine("KeyPress: \t{0} {1}", e.KeyChar, elapsed);
+
+            /*
+             * Barcode scanner usually takes less than 17 milliseconds to read, increase this if neccessary of your barcode scanner is slower
+             * also assuming human can not type faster than 17 milliseconds
+             */
+            if (elapsed > 17)
+                _barcode.Clear();
+
+
+            // Do not push in array if Enter/Return is pressed, since it is not any Character that need to be read
+            if (e.KeyChar != (char)Keys.Return)
+            {
+                _barcode.Add(e.KeyChar);
+            }
+
+            if (_barcode.Count == 8)
+            {
+                string BarCodeData = new String(_barcode.ToArray());
+                SendTid(BarCodeData);
+                _barcode.Clear();
+            }
+
+            // update the last key press strock time
+            _lastKeystroke = DateTime.Now.Millisecond;
         }
 
         private void SendTid(string tid)
@@ -90,26 +138,11 @@ namespace AccessControl1s
                 ImageConverter converter = new ImageConverter();
                 var bitmap = BitmapConverter.ToBitmap(frame);
                 image = (byte[])converter.ConvertTo(bitmap, typeof(byte[]));
-
-                //guestList.Insert(0, new Tuple<string, DateTime>(tid, DateTime.Now));
-                //if (guestList.Count > 100)
-                //{
-                //    guestList.RemoveAt(100);
-                //}
             }
-            //try
-            //{
-            //    await api.ApiHistoryPostAsync(new HistoryRequest("Entry", tid, true, "success", image));
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //Channel_comboBox.SelectedIndex = 1;
-            //btn_OpenDoor_Click(null, null);
 
             frame = null;
             textBox1.Text = "";
+            capture.Dispose();
         }
 
         private void BarcodeReader_KeyUp(object sender, KeyEventArgs e)
@@ -1180,6 +1213,14 @@ namespace AccessControl1s
             AccessPwd cm = new AccessPwd(m_LoginID, nChm, this);
             cm.ShowDialog();
             cm.Dispose();
+        }
+
+        private void AccessControlForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_GlobalHook.KeyPress -= GlobalHookKeyPress;
+            m_GlobalHook.Dispose();
+
+            Application.ExitThread();
         }
     }
 }
